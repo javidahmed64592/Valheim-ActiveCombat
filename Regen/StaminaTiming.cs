@@ -1,6 +1,6 @@
 using CombatFlow.Core;
 
-namespace CombatFlow.Stamina;
+namespace CombatFlow.Regen;
 
 internal static class StaminaTiming
 {

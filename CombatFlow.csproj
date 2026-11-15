@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework>
     <AssemblyName>CombatFlow</AssemblyName>
-    <Description>Smoother, more active combat: actions that are not cancelled by movement, instant gear swaps and faster stamina recovery.</Description>
+    <Description>Smoother, more active combat: movement no longer cancels actions, instant gear swaps, faster reloads, food that heals straight away and regen that grows with your skills.</Description>
     <Version>0.1.0</Version>
     <LangVersion>latest</LangVersion>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>

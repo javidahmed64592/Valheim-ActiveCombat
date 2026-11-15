@@ -7,3 +7,6 @@
 - Crossbows, the grappling hook and Dundr load in half the time. The vanilla skill bonus still applies on top, so a crossbow takes 1.75 seconds at skill 0 and under 1 second at skill 100. Dundr's eitr cost drops with its charge time, since it drains eitr per second while charging.
 - Loading a crossbow no longer uses stamina. Vanilla only drains 1 stamina per second, but it resets the regen delay every frame, so stamina never regenerates while you load.
 - Stamina starts regenerating 0.5 seconds after you stop using it, instead of 1 second.
+- Eating fills your bars by however much the food raised them. Health, stamina and eitr each go up by the amount their maximum rose, so a fresh meal heals you straight away instead of over the next minute or two. Topping up a half-eaten food fills by the difference.
+- Stamina regenerates faster as your Run, Jump, Swim, Sneak and Dodge skills grow, up to +50% when all five are at 100. The bonus follows their average level and stacks with Rested the same way other regen bonuses do.
+- Eitr regenerates faster as your best magic skill grows, up to +50% at Elemental or Blood Magic 100. Only your best school counts, so you don't need to train both.
