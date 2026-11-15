@@ -1,4 +1,4 @@
-using CombatFlow.Stamina;
+using CombatFlow.Regen;
 
 using HarmonyLib;
 

@@ -4,7 +4,7 @@
 
 # CombatFlow
 
-Smoother, more active combat: actions that are not cancelled by movement, instant gear swaps and faster stamina recovery.
+Smoother, more active combat: movement no longer cancels actions, instant gear swaps, faster reloads, food that heals straight away and regen that grows with your skills.
 
 ## Features
 
@@ -12,6 +12,8 @@ Smoother, more active combat: actions that are not cancelled by movement, instan
 - **Instant gear swaps.** Armour and weapons are put on and taken off straight away.
 - **Faster reloads.** Crossbows, the grappling hook and Dundr load in half the time, on top of the vanilla skill bonus.
 - **Stamina that comes back.** Loading a crossbow no longer stops stamina regenerating, and stamina starts regenerating after half the vanilla delay.
+- **Food that works straight away.** Eating heals you and fills stamina and eitr by however much the food raised them.
+- **Regen that grows with you.** Stamina regenerates faster as your Run, Jump, Swim, Sneak and Dodge skills grow, and eitr as your magic skills grow.
 
 ## Configuration
 
@@ -19,7 +21,7 @@ Settings are in `BepInEx/config/javidahmed64592.combatflow.cfg`. Every setting i
 
 ## Compatibility
 
-- Other mods that change equip times, reload times or stamina regeneration may conflict with this mod.
+- Other mods that change equip times, reload times, food, or stamina and eitr regeneration may conflict with this mod.
 - This mod has not been tested with a gamepad, only with keyboard and mouse.
 
 ## Uninstalling
