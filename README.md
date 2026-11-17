@@ -4,7 +4,7 @@
 
 # CombatFlow
 
-Smoother, more active combat: movement no longer cancels actions, instant gear swaps, faster reloads, food that heals straight away and regen that grows with your skills.
+Smoother, more active combat: movement no longer cancels actions, instant gear swaps, faster reloads, food that heals straight away, regen that grows with your skills, and magic without the health cost, backed by a mana shield.
 
 ## Features
 
@@ -14,6 +14,8 @@ Smoother, more active combat: movement no longer cancels actions, instant gear s
 - **Stamina that comes back.** Loading a crossbow no longer stops stamina regenerating, and stamina starts regenerating after half the vanilla delay.
 - **Food that works straight away.** Eating heals you and fills stamina and eitr by however much the food raised them.
 - **Regen that grows with you.** Stamina regenerates faster as your Run, Jump, Swim, Sneak and Dodge skills grow, and eitr as your magic skills grow.
+- **Blood magic without the blood.** Blood magic staffs no longer cost health to cast.
+- **Mana shield.** While you have eitr, a quarter of the damage you take is paid from eitr instead of health, giving mages the defence their light armour lacks.
 
 ## Configuration
 
@@ -21,7 +23,7 @@ Settings are in `BepInEx/config/javidahmed64592.combatflow.cfg`. Every setting i
 
 ## Compatibility
 
-- Other mods that change equip times, reload times, food, or stamina and eitr regeneration may conflict with this mod.
+- Other mods that change equip times, reload times, food, stamina and eitr regeneration, magic costs or damage taken may conflict with this mod.
 - This mod has not been tested with a gamepad, only with keyboard and mouse.
 
 ## Uninstalling

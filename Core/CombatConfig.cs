@@ -16,6 +16,10 @@ internal static class CombatConfig
 
     public static ConfigEntry<bool> FoodFillsBars;
 
+    public static ConfigEntry<float> BloodMagicHealthMultiplier;
+    public static ConfigEntry<float> ManaShieldShare;
+    public static ConfigEntry<float> ManaShieldEitrPerDamage;
+
     public static void Bind(ConfigFile config)
     {
         MovementKeepsActions = config.Bind("Actions", "MovementKeepsActions", true,
@@ -45,6 +49,16 @@ internal static class CombatConfig
         FoodFillsBars = config.Bind("Food", "FoodFillsBars", true,
             new ConfigDescription("Eating straight away heals you, and fills your stamina and eitr, by however much the food raised each maximum. In vanilla only the maximum goes up and you have to wait for regen to catch up. (Synced with server)",
                 null, Synced()));
+
+        BloodMagicHealthMultiplier = config.Bind("Magic", "BloodMagicHealthMultiplier", 0f,
+            new ConfigDescription("Multiplies the health blood magic staffs cost per cast (40 to 60% of your health in vanilla). 0 removes the cost, 1 is vanilla. (Synced with server)",
+                new AcceptableValueRange<float>(0f, 1f), Synced()));
+        ManaShieldShare = config.Bind("Magic", "ManaShieldShare", 0.25f,
+            new ConfigDescription("Share of the damage you take that is paid from eitr instead of health, while you have eitr. 0.25 is a quarter; 0 turns the shield off. (Synced with server)",
+                new AcceptableValueRange<float>(0f, 1f), Synced()));
+        ManaShieldEitrPerDamage = config.Bind("Magic", "ManaShieldEitrPerDamage", 1f,
+            new ConfigDescription("Eitr used for each point of damage the shield takes. (Synced with server)",
+                new AcceptableValueRange<float>(0.1f, 5f), Synced()));
     }
 
     /// <summary>Settings that use the server's value when the server has the mod.</summary>
