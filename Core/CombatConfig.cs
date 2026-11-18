@@ -50,8 +50,8 @@ internal static class CombatConfig
             new ConfigDescription("Extra eitr regen from your best magic skill (Elemental or Blood Magic). It grows with that skill and reaches this value at 100, so 0.5 is +50%. Without Rested it is the least you get; with Rested see Regen.SkillStackShare. Gear regen still adds in full. (Synced with server)",
                 new AcceptableValueRange<float>(0f, 3f), Synced()));
 
-        SkillStackShare = config.Bind("Regen", "SkillStackShare", 0.5f,
-            new ConfigDescription("How skill regen bonuses combine with Rested and other regen effects. The bigger bonus counts in full and the smaller at this share, so Rested (+100%) and a +50% skill bonus give +125% at 0.5. 0 uses only the bigger one, 1 adds both in full. (Synced with server)",
+        SkillStackShare = config.Bind("Regen", "SkillStackShare", 0.25f,
+            new ConfigDescription("How skill regen bonuses combine with Rested and other regen effects. The bigger bonus counts in full and the smaller at this share, so Rested (+100%) and a +50% skill bonus give +112.5% at 0.25. 0 uses only the bigger one, 1 adds both in full. (Synced with server)",
                 new AcceptableValueRange<float>(0f, 1f), Synced()));
 
         FoodFillsBars = config.Bind("Food", "FoodFillsBars", true,
@@ -68,8 +68,8 @@ internal static class CombatConfig
             new ConfigDescription("The same for eitr, for foods that raise eitr. 0 turns it off. (Synced with server)",
                 new AcceptableValueRange<float>(0f, 5f), Synced()));
 
-        BloodMagicHealthMultiplier = config.Bind("Magic", "BloodMagicHealthMultiplier", 0f,
-            new ConfigDescription("Multiplies the health blood magic staffs cost per cast (40 to 60% of your health in vanilla). 0 removes the cost, 1 is vanilla. (Synced with server)",
+        BloodMagicHealthMultiplier = config.Bind("Magic", "BloodMagicHealthMultiplier", 0.5f,
+            new ConfigDescription("Multiplies the health blood magic staffs cost per cast (40 to 60% of your health in vanilla). 0.5 halves it, 0 removes the cost, 1 is vanilla. (Synced with server)",
                 new AcceptableValueRange<float>(0f, 1f), Synced()));
         ManaShieldShare = config.Bind("Magic", "ManaShieldShare", 0.25f,
             new ConfigDescription("Share of the damage you take that is paid from eitr instead of health, while you have eitr. 0.25 is a quarter; 0 turns the shield off. (Synced with server)",
