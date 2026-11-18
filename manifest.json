@@ -1,6 +1,6 @@
 {
   "name": "CombatFlow",
-  "description": "Smoother, more active combat: movement no longer cancels actions, instant gear swaps, faster reloads, food that heals straight away, regen that grows with your skills, and magic without the health cost, backed by a mana shield.",
+  "description": "Smoother, more active combat: movement no longer cancels actions, instant gear swaps, faster reloads, food that heals straight away, regen that grows with your skills, and cheaper blood magic, backed by a mana shield.",
   "version_number": "0.1.0",
   "dependencies": [
     "denikson-BepInExPack_Valheim-5.4.2360",

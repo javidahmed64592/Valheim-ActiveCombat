@@ -4,7 +4,7 @@
 
 # CombatFlow
 
-Smoother, more active combat: movement no longer cancels actions, instant gear swaps, faster reloads, food that heals straight away, regen that grows with your skills, and magic without the health cost, backed by a mana shield.
+Smoother, more active combat: movement no longer cancels actions, instant gear swaps, faster reloads, food that heals straight away, regen that grows with your skills, and cheaper blood magic, backed by a mana shield.
 
 ## Features
 
@@ -13,8 +13,9 @@ Smoother, more active combat: movement no longer cancels actions, instant gear s
 - **Faster reloads.** Crossbows, the grappling hook and Dundr load in half the time, on top of the vanilla skill bonus.
 - **Stamina that comes back.** Loading a crossbow no longer stops stamina regenerating, and stamina starts regenerating after half the vanilla delay.
 - **Food that works straight away.** Eating heals you and fills stamina and eitr by however much the food raised them.
-- **Regen that grows with you.** Stamina regenerates faster as your Run, Jump, Swim, Sneak and Dodge skills grow, and eitr as your magic skills grow.
-- **Blood magic without the blood.** Blood magic staffs no longer cost health to cast.
+- **Regen that grows with you.** Stamina regenerates faster as your Run, Jump, Swim, Sneak and Dodge skills grow, and eitr as your magic skills grow, with diminishing returns alongside Rested.
+- **Food that keeps you going.** Food restores stamina and eitr over time as well as health, and all three flow in smoothly instead of every 10 seconds.
+- **Cheaper blood magic.** Blood magic staffs cost half as much health to cast.
 - **Mana shield.** While you have eitr, a quarter of the damage you take is paid from eitr instead of health, giving mages the defence their light armour lacks.
 
 ## Configuration

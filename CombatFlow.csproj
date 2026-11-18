@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework>
     <AssemblyName>CombatFlow</AssemblyName>
-    <Description>Smoother, more active combat: movement no longer cancels actions, instant gear swaps, faster reloads, food that heals straight away, regen that grows with your skills, and magic without the health cost, backed by a mana shield.</Description>
+    <Description>Smoother, more active combat: movement no longer cancels actions, instant gear swaps, faster reloads, food that heals straight away, regen that grows with your skills, and cheaper blood magic, backed by a mana shield.</Description>
     <Version>0.1.0</Version>
     <LangVersion>latest</LangVersion>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
@@ -29,6 +29,10 @@
          into your output folder or redistributed with the mod. -->
     <Reference Include="0Harmony">
       <HintPath>$(BepInExCoreDir)/0Harmony.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="assembly_guiutils">
+      <HintPath>$(ManagedDir)/assembly_guiutils.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="assembly_utils">
