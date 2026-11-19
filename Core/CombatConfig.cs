@@ -21,6 +21,7 @@ internal static class CombatConfig
     public static ConfigEntry<float> FoodEitrRegen;
 
     public static ConfigEntry<bool> FairFallDamage;
+    public static ConfigEntry<float> FallDamageCurve;
 
     public static ConfigEntry<float> BloodMagicHealthMultiplier;
     public static ConfigEntry<float> ManaShieldShare;
@@ -73,6 +74,10 @@ internal static class CombatConfig
         FairFallDamage = config.Bind("Falling", "FairFallDamage", true,
             new ConfigDescription("Fall damage counts how far below where you left the ground you land, and how fast you hit it, instead of the highest point you reached. Jumping off a ledge no longer adds your jump's height, and ending feather fall in mid-air only counts the fall after it ended. Falls under 4 metres still do no damage. (Synced with server)",
                 null, Synced()));
+
+        FallDamageCurve = config.Bind("Falling", "FallDamageCurve", 2f,
+            new ConfigDescription("Shapes fall damage between 4 metres (none) and 20 metres (the full 100). 1 is vanilla's straight line. 2 makes short falls much gentler while long falls stay deadly: 8 metres does 6 damage instead of 25, 12 metres 25 instead of 50, 16 metres 56 instead of 75. (Synced with server)",
+                new AcceptableValueRange<float>(1f, 4f), Synced()));
 
         BloodMagicHealthMultiplier = config.Bind("Magic", "BloodMagicHealthMultiplier", 0.5f,
             new ConfigDescription("Multiplies the health blood magic staffs cost per cast (40 to 60% of your health in vanilla). 0.5 halves it, 0 removes the cost, 1 is vanilla. (Synced with server)",
