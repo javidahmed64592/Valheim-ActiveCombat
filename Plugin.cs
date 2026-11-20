@@ -1,6 +1,6 @@
-using BepInEx;
-
 using ActiveCombat.Core;
+
+using BepInEx;
 
 using HarmonyLib;
 
