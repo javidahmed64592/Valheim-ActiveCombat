@@ -15,6 +15,7 @@ Smoother, more active combat: movement no longer cancels actions, instant gear s
 - **Food that works straight away.** Eating heals you and fills stamina and eitr by however much the food raised them.
 - **Regen that grows with you.** Stamina regenerates faster as your Run, Jump, Swim, Sneak and Dodge skills grow, and eitr as your magic skills grow, with diminishing returns alongside Rested.
 - **Food that keeps you going.** Food restores stamina and eitr over time as well as health, and all three flow in smoothly instead of every 10 seconds.
+- **Fairer falls.** Jumping off a ledge no longer adds your jump's height to the fall, and ending feather fall in mid-air only counts the fall after it ended. Short falls hurt less, while falls of 20 metres or more still do the full 100 damage.
 - **Cheaper blood magic.** Blood magic staffs cost half as much health to cast.
 - **Mana shield.** While you have eitr, a quarter of the damage you take is paid from eitr instead of health, giving mages the defence their light armour lacks.
 
