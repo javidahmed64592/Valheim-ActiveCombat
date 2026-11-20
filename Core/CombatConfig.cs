@@ -23,6 +23,16 @@ internal static class CombatConfig
     public static ConfigEntry<bool> FairFallDamage;
     public static ConfigEntry<float> FallDamageCurve;
 
+    public static ConfigEntry<float> AdrenalineHitGain;
+    public static ConfigEntry<float> AdrenalineComboWindow;
+    public static ConfigEntry<float> AdrenalineComboBonus;
+    public static ConfigEntry<float> AdrenalineComboMax;
+    public static ConfigEntry<float> AdrenalineDamageScaling;
+    public static ConfigEntry<float> AdrenalineDamageGainCap;
+    public static ConfigEntry<float> AdrenalineDecayDelayMultiplier;
+    public static ConfigEntry<float> AdrenalineSkillDecayReduction;
+    public static ConfigEntry<float> AdrenalineProcReset;
+
     public static ConfigEntry<float> BloodMagicHealthMultiplier;
     public static ConfigEntry<float> ManaShieldShare;
     public static ConfigEntry<float> ManaShieldEitrPerDamage;
@@ -78,6 +88,34 @@ internal static class CombatConfig
         FallDamageCurve = config.Bind("Falling", "FallDamageCurve", 1.25f,
             new ConfigDescription("Shapes fall damage between 4 metres (none) and 20 metres (the full 100). 1 is vanilla's straight line. 1.25 makes short falls gentler while long falls stay deadly: 8 metres does 18 damage instead of 25, 12 metres 42 instead of 50, 16 metres 70 instead of 75. Up to 2 for gentler still. (Synced with server)",
                 new AcceptableValueRange<float>(1f, 2f), Synced()));
+
+        AdrenalineHitGain = config.Bind("Adrenaline", "HitGainMultiplier", 3f,
+            new ConfigDescription("Multiplies the adrenaline each weapon or projectile hit gives (1 for most melee hits and 2 for arrows in vanilla), before the combo and damage bonuses. 1 is vanilla. (Synced with server)",
+                new AcceptableValueRange<float>(0f, 10f), Synced()));
+        AdrenalineComboWindow = config.Bind("Adrenaline", "ComboWindow", 3f,
+            new ConfigDescription("Seconds you can wait between hits and keep your combo going. 0 turns the combo off. (Synced with server)",
+                new AcceptableValueRange<float>(0f, 10f), Synced()));
+        AdrenalineComboBonus = config.Bind("Adrenaline", "ComboBonusPerHit", 0.25f,
+            new ConfigDescription("Extra adrenaline from each hit in a combo after the first, so 0.25 makes the 2nd hit give 25% more, the 3rd 50% more and so on. Several targets hit by one swing count as one step. (Synced with server)",
+                new AcceptableValueRange<float>(0f, 1f), Synced()));
+        AdrenalineComboMax = config.Bind("Adrenaline", "ComboMaxMultiplier", 3f,
+            new ConfigDescription("The most a combo can multiply a hit's adrenaline by. (Synced with server)",
+                new AcceptableValueRange<float>(1f, 5f), Synced()));
+        AdrenalineDamageScaling = config.Bind("Adrenaline", "DamageScaling", 0.5f,
+            new ConfigDescription("How much harder hits give more adrenaline, measured against a normal hit from your weapon after the target's resistances, weak spots, backstabs and staggers. The gain is multiplied by (damage / normal) to this power, so at 0.5 a hit doing 4 times normal gives twice the adrenaline and a quarter of normal gives half. 0 turns it off. (Synced with server)",
+                new AcceptableValueRange<float>(0f, 1f), Synced()));
+        AdrenalineDamageGainCap = config.Bind("Adrenaline", "DamageGainCap", 2f,
+            new ConfigDescription("Limits the damage bonus: a hit gives at most this many times, and at least one over this many times, the adrenaline of a normal hit. (Synced with server)",
+                new AcceptableValueRange<float>(1f, 4f), Synced()));
+        AdrenalineDecayDelayMultiplier = config.Bind("Adrenaline", "DecayDelayMultiplier", 2f,
+            new ConfigDescription("Multiplies how long adrenaline waits after you last gained some before it starts draining (6 to 10 seconds in vanilla, shorter when the bar is fuller). 1 is vanilla. (Synced with server)",
+                new AcceptableValueRange<float>(0.5f, 5f), Synced()));
+        AdrenalineSkillDecayReduction = config.Bind("Adrenaline", "SkillDecayReduction", 0.75f,
+            new ConfigDescription("How much your skill with the weapon in hand slows adrenaline draining. It grows with the skill and reaches this share at 100, so 0.75 drains at a quarter of the speed at skill 100. 0 is vanilla. (Synced with server)",
+                new AcceptableValueRange<float>(0f, 1f), Synced()));
+        AdrenalineProcReset = config.Bind("Adrenaline", "ProcResetShare", 0.3f,
+            new ConfigDescription("Share of the bar adrenaline drops back to when it fills and triggers a trinket, so 0.3 leaves it 30% full. 0 empties it as in vanilla. (Synced with server)",
+                new AcceptableValueRange<float>(0f, 0.9f), Synced()));
 
         BloodMagicHealthMultiplier = config.Bind("Magic", "BloodMagicHealthMultiplier", 0.5f,
             new ConfigDescription("Multiplies the health blood magic staffs cost per cast (40 to 60% of your health in vanilla). 0.5 halves it, 0 removes the cost, 1 is vanilla. (Synced with server)",
