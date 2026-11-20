@@ -1,8 +1,8 @@
-using CombatFlow.Core;
+using ActiveCombat.Core;
 
 using UnityEngine;
 
-namespace CombatFlow.Regen;
+namespace ActiveCombat.Regen;
 
 /// <summary>
 /// Vanilla stops stamina regen for the whole attack or dodge animation, recovery included, so after a swing stamina

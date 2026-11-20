@@ -2,14 +2,14 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Reflection.Emit;
 
-using CombatFlow.Adrenaline;
-using CombatFlow.Core;
+using ActiveCombat.Adrenaline;
+using ActiveCombat.Core;
 
 using HarmonyLib;
 
 using UnityEngine;
 
-namespace CombatFlow.Patches;
+namespace ActiveCombat.Patches;
 
 /// <summary>Routes vanilla's hit adrenaline through <see cref="AdrenalineFlow.AddHitAdrenaline"/>.</summary>
 internal static class HitAdrenaline
@@ -111,7 +111,7 @@ internal static class Player_UpdateStats_Patch
 
         if (count == 0)
         {
-            CombatFlowPlugin.Log.LogWarning($"{nameof(Player_UpdateStats_Patch)}: found nothing to patch. The game may have changed, so slower adrenaline decay is off.");
+            ActiveCombatPlugin.Log.LogWarning($"{nameof(Player_UpdateStats_Patch)}: found nothing to patch. The game may have changed, so slower adrenaline decay is off.");
         }
     }
 }

@@ -1,8 +1,8 @@
-using CombatFlow.Regen;
+using ActiveCombat.Regen;
 
 using HarmonyLib;
 
-namespace CombatFlow.Patches;
+namespace ActiveCombat.Patches;
 
 /// <summary>
 /// Only Player.UpdateStats asks for these, and only on the player's own client. Gear eitr regen is added by vanilla

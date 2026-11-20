@@ -1,6 +1,6 @@
-using CombatFlow.Core;
+using ActiveCombat.Core;
 
-namespace CombatFlow.Magic;
+namespace ActiveCombat.Magic;
 
 /// <summary>
 /// Part of every hit a player takes is paid from eitr instead of health, while they have eitr. It's the defence

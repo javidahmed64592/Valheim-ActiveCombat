@@ -1,12 +1,12 @@
 using System.Collections.Generic;
 using System.Reflection;
 
-using CombatFlow.Actions;
-using CombatFlow.Core;
+using ActiveCombat.Actions;
+using ActiveCombat.Core;
 
 using HarmonyLib;
 
-namespace CombatFlow.Patches;
+namespace ActiveCombat.Patches;
 
 /// <summary>Scales every read of <c>m_equipDuration</c> where the player decides how long equipping takes.</summary>
 internal static class EquipDuration

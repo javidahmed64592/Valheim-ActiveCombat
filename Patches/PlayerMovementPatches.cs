@@ -1,12 +1,12 @@
 using System.Collections.Generic;
 using System.Reflection;
 
-using CombatFlow.Actions;
-using CombatFlow.Core;
+using ActiveCombat.Actions;
+using ActiveCombat.Core;
 
 using HarmonyLib;
 
-namespace CombatFlow.Patches;
+namespace ActiveCombat.Patches;
 
 /// <summary>Swaps the <c>ClearActionQueue()</c> call in sprinting, jumping and dodging for one that respects the setting.</summary>
 internal static class MovementClear

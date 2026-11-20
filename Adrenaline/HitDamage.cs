@@ -1,8 +1,8 @@
-using CombatFlow.Core;
+using ActiveCombat.Core;
 
 using UnityEngine;
 
-namespace CombatFlow.Adrenaline;
+namespace ActiveCombat.Adrenaline;
 
 /// <summary>
 /// Compares how hard a hit from the local player lands with a normal hit from their weapon. The target's resistances,

@@ -5,14 +5,14 @@ using System.Reflection;
 using Jotunn.Entities;
 using Jotunn.Managers;
 
-namespace CombatFlow.Core;
+namespace ActiveCombat.Core;
 
 /// <summary>
 /// Loads every embedded Translations/&lt;Language&gt;.json into Jotunn. Missing languages and keys fall back to English.
 /// </summary>
 internal static class Translations
 {
-    private const string ResourcePrefix = "CombatFlow.Translations.";
+    private const string ResourcePrefix = "ActiveCombat.Translations.";
     private const string ResourceSuffix = ".json";
 
     public static void Load()

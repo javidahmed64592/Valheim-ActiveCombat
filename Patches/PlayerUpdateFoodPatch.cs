@@ -1,8 +1,8 @@
-using CombatFlow.Food;
+using ActiveCombat.Food;
 
 using HarmonyLib;
 
-namespace CombatFlow.Patches;
+namespace ActiveCombat.Patches;
 
 /// <summary>
 /// Adds food's stamina and eitr regen. With continuous regen, vanilla's 10-second heal is held off and all three are

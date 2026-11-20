@@ -1,8 +1,8 @@
-using CombatFlow.Magic;
+using ActiveCombat.Magic;
 
 using HarmonyLib;
 
-namespace CombatFlow.Patches;
+namespace ActiveCombat.Patches;
 
 /// <summary>Every health cost of an attack goes through here: the cost per cast and the low-health check.</summary>
 [HarmonyPatch(typeof(Attack), "GetAttackHealth")]

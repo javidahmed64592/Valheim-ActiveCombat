@@ -1,6 +1,6 @@
-using CombatFlow.Core;
+using ActiveCombat.Core;
 
-namespace CombatFlow.Actions;
+namespace ActiveCombat.Actions;
 
 /// <summary>
 /// Equipping, unequipping and reloading all run through the player's action queue. Vanilla wipes that queue whenever

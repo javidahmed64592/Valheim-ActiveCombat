@@ -1,6 +1,6 @@
 using BepInEx.Configuration;
 
-namespace CombatFlow.Core;
+namespace ActiveCombat.Core;
 
 internal static class CombatConfig
 {

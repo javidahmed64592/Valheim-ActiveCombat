@@ -1,8 +1,8 @@
-using CombatFlow.Regen;
+using ActiveCombat.Regen;
 
 using HarmonyLib;
 
-namespace CombatFlow.Patches;
+namespace ActiveCombat.Patches;
 
 /// <summary>Stamina regen during attacks and dodges. UpdateStats(float) only runs for the local player, from Player.FixedUpdate on the owner's client.</summary>
 [HarmonyPatch(typeof(Player), nameof(Player.UpdateStats), [typeof(float)])]

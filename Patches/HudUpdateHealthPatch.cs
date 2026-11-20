@@ -1,8 +1,8 @@
-using CombatFlow.Food;
+using ActiveCombat.Food;
 
 using HarmonyLib;
 
-namespace CombatFlow.Patches;
+namespace ActiveCombat.Patches;
 
 /// <summary>
 /// The health bar waits half a second after each rise before it fills, and every rise starts that wait again. With
