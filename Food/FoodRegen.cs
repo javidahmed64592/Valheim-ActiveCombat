@@ -1,4 +1,5 @@
 using CombatFlow.Core;
+using CombatFlow.Regen;
 
 namespace CombatFlow.Food;
 
@@ -6,7 +7,8 @@ namespace CombatFlow.Food;
 /// Food restores stamina and eitr as well as health. Each food's stamina and eitr regen keep the same proportion to
 /// its stamina and eitr as its health regen has to its health, scaled by the <c>Food.StaminaRegen</c> and
 /// <c>Food.EitrRegen</c> settings. With <c>Food.ContinuousRegen</c> all three flow in every frame at the same rate
-/// per 10 seconds, instead of arriving in one go on vanilla's 10-second tick.
+/// per 10 seconds, instead of arriving in one go on vanilla's 10-second tick. Food stamina pauses whenever vanilla
+/// stamina regen is stopped by swimming or being over-encumbered.
 /// </summary>
 internal static class FoodRegen
 {
@@ -54,7 +56,8 @@ internal static class FoodRegen
 
         stamina *= share;
         eitr *= share;
-        if (stamina > 0f)
+        // Swimming and being over-encumbered stop food's stamina too, as they stop vanilla stamina regen.
+        if (stamina > 0f && !ActionRegen.StaminaRegenBlocked(player))
         {
             player.AddStamina(stamina);
         }

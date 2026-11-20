@@ -25,6 +25,7 @@ public class CombatFlowPlugin : BaseUnityPlugin
     {
         Log = Logger;
         CombatConfig.Bind(Config);
+        Translations.Load();
 
         _harmony = new Harmony(PluginGUID);
         _harmony.PatchAll();

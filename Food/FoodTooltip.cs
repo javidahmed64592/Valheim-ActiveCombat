@@ -20,13 +20,14 @@ internal static class FoodTooltip
         string extra = "";
         if (stamina > 0f)
         {
-            extra += $", <color=#ffff80ff>{Format(stamina)} stamina/tick</color>";
+            extra += $", <color=#ffff80ff>{Format(stamina)} $combatflow_stamina_per_tick</color>";
         }
         if (eitr > 0f)
         {
-            extra += $", <color=#9090ffff>{Format(eitr)} eitr/tick</color>";
+            extra += $", <color=#9090ffff>{Format(eitr)} $combatflow_eitr_per_tick</color>";
         }
-        return HealthRegenLine.Replace(tooltip, "$1" + extra, 1);
+        // A match evaluator, so the "$" of the tokens isn't read as a substitution.
+        return HealthRegenLine.Replace(tooltip, match => match.Value + extra, 1);
     }
 
     private static string Format(float value)

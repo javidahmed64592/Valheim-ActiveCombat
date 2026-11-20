@@ -21,6 +21,11 @@
     </PackageReference>
   </ItemGroup>
 
+  <!-- Translations/<Language>.json, embedded and loaded by Translations.Load. -->
+  <ItemGroup>
+    <EmbeddedResource Include="Translations\*.json" LogicalName="CombatFlow.Translations.%(Filename).json" />
+  </ItemGroup>
+
   <!-- In CI (GitHub Actions) there is no local Valheim install, so game/BepInEx DLLs
        come from NuGet packages instead. Locally they come from ValheimDir (see Directory.Build.props). -->
   <ItemGroup Condition="'$(GITHUB_ACTIONS)' != 'true'">
