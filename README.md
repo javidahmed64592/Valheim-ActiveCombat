@@ -4,29 +4,57 @@
 
 # CombatFlow
 
-Smoother, more active combat: movement no longer cancels actions, instant gear swaps, faster reloads, food that heals straight away, regen that grows with your skills, combo-driven adrenaline, and cheaper blood magic with a mana shield.
+Smoother, more active combat: act on the move, instant gear swaps, faster reloads, food that heals straight away, skill-based regen, combo-driven adrenaline, fairer falls, and cheaper blood magic with a mana shield.
 
-## Features
+Combat stays just as dangerous, but you spend less time waiting on your stamina bar and more time fighting.
 
-- **Keep moving while you act.** Running, jumping and dodging no longer cancel equipping or reloading, so you can load a crossbow or grappling hook on the run.
-- **Instant gear swaps.** Armour and weapons are put on and taken off straight away.
-- **Faster reloads.** Crossbows, the grappling hook and Dundr load in half the time, on top of the vanilla skill bonus.
-- **Stamina that comes back.** Loading a crossbow no longer stops stamina regenerating, and stamina starts regenerating after half the vanilla delay.
-- **Food that works straight away.** Eating heals you and fills stamina and eitr by however much the food raised them.
-- **Regen that grows with you.** Stamina regenerates faster as your Run, Jump, Swim, Sneak and Dodge skills grow, and eitr as your magic skills grow, with diminishing returns alongside Rested.
-- **Food that keeps you going.** Food restores stamina and eitr over time as well as health, and all three flow in smoothly instead of every 10 seconds.
-- **Fairer falls.** Jumping off a ledge no longer adds your jump's height to the fall, and ending feather fall in mid-air only counts the fall after it ended. Short falls hurt less, while falls of 20 metres or more still do the full 100 damage.
-- **Adrenaline that rewards aggression.** Hits fill adrenaline faster, more so in quick combos and on harder hits such as backstabs, weak spots and heavy attacks. It lingers longer, drains slower the better you are with your weapon, and drops to 30% instead of empty when a trinket fires.
-- **Cheaper blood magic.** Blood magic staffs cost half as much health to cast.
-- **Mana shield.** While you have eitr, a quarter of the damage you take is paid from eitr instead of health, giving mages the defence their light armour lacks.
+## Actions and Weapons
+
+- Running, jumping and dodging no longer cancel equipping or reloading, so you can load a crossbow on the run.
+- Armour and weapons go on and come off instantly.
+- Crossbows, the grappling hook and Dundr load in half the time, on top of the vanilla skill bonus.
+- Loading a crossbow no longer uses stamina, so stamina keeps regenerating while you load.
+
+## Stamina and Eitr
+
+- Stamina starts regenerating after half the vanilla delay.
+- Stamina keeps coming back at half speed during attacks and dodges, instead of waiting for the whole animation to end.
+- Stamina regenerates faster as your Run, Jump, Swim, Sneak and Dodge skills grow, and eitr as your best magic skill grows, up to +50% at skill 100.
+- These skill bonuses have diminishing returns alongside Rested, so the two don't simply add up.
+- Swimming and being over-encumbered still stop stamina regen.
+
+## Food
+
+- Eating heals you and fills your stamina and eitr straight away, by however much the food raised each bar.
+- Food restores stamina and eitr over time as well as health, shown next to the health regen in its tooltip.
+- Food regen flows in smoothly instead of arriving in one jump every 10 seconds.
+
+## Adrenaline
+
+- Hits give three times as much adrenaline.
+- Quick combos build it faster, and harder hits such as backstabs, weak spots and heavy attacks give more.
+- It waits twice as long before draining, and drains slower the better you are with the weapon in hand.
+- When it triggers a trinket, it drops to 30% instead of empty.
+
+## Magic
+
+- Blood magic staffs cost half as much health to cast.
+- **Mana shield:** while you have eitr, a quarter of the damage you take is paid from eitr instead of health, giving mages the defence their light armour lacks. A shimmer shows each hit it takes, and it shatters when a hit drains the last of your eitr.
+
+## Falling
+
+- Jumping off a ledge no longer adds your jump's height to the fall, and ending feather fall in mid-air only counts the fall after it ended.
+- Short falls hurt less, while falls of 20 metres or more still do the full 100 damage.
 
 ## Configuration
 
-Settings are in `BepInEx/config/javidahmed64592.combatflow.cfg`. Every setting is marked "(Synced with server)": when the server has the mod, its values are used.
+Settings are in `BepInEx/config/javidahmed64592.combatflow.cfg`.
+Settings marked "(Synced with server)" use the server's values when the server has the mod installed.
+Every change above can be tuned or turned off.
 
 ## Compatibility
 
-- Other mods that change equip times, reload times, food, stamina and eitr regeneration, magic costs, adrenaline or damage taken may conflict with this mod.
+- Other mods that change equip times, reload times, food, stamina and eitr regeneration, adrenaline, magic costs, fall damage or damage taken may conflict with this mod.
 - This mod has not been tested with a gamepad, only with keyboard and mouse.
 
 ## Uninstalling

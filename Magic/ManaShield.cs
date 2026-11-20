@@ -1,7 +1,5 @@
 using CombatFlow.Core;
 
-using UnityEngine;
-
 namespace CombatFlow.Magic;
 
 /// <summary>
@@ -26,12 +24,19 @@ internal static class ManaShield
         // UseEitr scales the cost by the world's eitr rate, so the eitr available is divided by it too.
         float eitrCost = eitrPerDamage * Game.m_eitrRate;
         float absorbed = damage * share;
-        if (eitrCost > 0f)
+        bool drained = false;
+        if (eitrCost > 0f && absorbed * eitrCost >= eitr)
         {
-            absorbed = Mathf.Min(absorbed, eitr / eitrCost);
+            absorbed = eitr / eitrCost;
+            drained = true;
+        }
+        if (absorbed <= 0f)
+        {
+            return;
         }
 
         hit.ApplyModifier((damage - absorbed) / damage);
         player.UseEitr(absorbed * eitrPerDamage);
+        ManaShieldEffects.Play(player, hit, drained);
     }
 }

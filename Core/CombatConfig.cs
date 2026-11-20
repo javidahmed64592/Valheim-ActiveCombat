@@ -11,6 +11,7 @@ internal static class CombatConfig
 
     public static ConfigEntry<float> StaminaRegenDelayMultiplier;
     public static ConfigEntry<float> AgilityRegenBonus;
+    public static ConfigEntry<float> StaminaRegenWhileActing;
 
     public static ConfigEntry<float> MagicRegenBonus;
     public static ConfigEntry<float> SkillStackShare;
@@ -36,6 +37,7 @@ internal static class CombatConfig
     public static ConfigEntry<float> BloodMagicHealthMultiplier;
     public static ConfigEntry<float> ManaShieldShare;
     public static ConfigEntry<float> ManaShieldEitrPerDamage;
+    public static ConfigEntry<bool> ManaShieldEffects;
 
     public static void Bind(ConfigFile config)
     {
@@ -55,6 +57,9 @@ internal static class CombatConfig
         StaminaRegenDelayMultiplier = config.Bind("Stamina", "RegenDelayMultiplier", 0.5f,
             new ConfigDescription("Multiplies how long stamina waits after you use it before it starts regenerating. Vanilla waits 1 second; 0 starts straight away. (Synced with server)",
                 new AcceptableValueRange<float>(0f, 2f), Synced()));
+        StaminaRegenWhileActing = config.Bind("Stamina", "RegenWhileActing", 0.5f,
+            new ConfigDescription("Share of your normal stamina regen you keep while attacking or dodging. Vanilla stops regen until the attack or dodge animation ends, even after the regen delay is over; 0 is vanilla, 1 regenerates at the full rate. Swimming and being over-encumbered still stop regen. (Synced with server)",
+                new AcceptableValueRange<float>(0f, 1f), Synced()));
         AgilityRegenBonus = config.Bind("Stamina", "AgilitySkillRegenBonus", 0.5f,
             new ConfigDescription("Extra stamina regen from the Run, Jump, Swim, Sneak and Dodge skills. It grows with their average level and reaches this value when all are 100, so 0.5 is +50%. Without Rested it is the least you get; with Rested see Regen.SkillStackShare. (Synced with server)",
                 new AcceptableValueRange<float>(0f, 3f), Synced()));
@@ -126,6 +131,8 @@ internal static class CombatConfig
         ManaShieldEitrPerDamage = config.Bind("Magic", "ManaShieldEitrPerDamage", 1f,
             new ConfigDescription("Eitr used for each point of damage the shield takes. (Synced with server)",
                 new AcceptableValueRange<float>(0.1f, 5f), Synced()));
+        ManaShieldEffects = config.Bind("Magic", "ManaShieldEffects", true,
+            new ConfigDescription("Shows a shimmer where the mana shield takes a hit, and a burst when a hit drains your eitr to nothing. Only affects your own character's effects."));
     }
 
     /// <summary>Settings that use the server's value when the server has the mod.</summary>
