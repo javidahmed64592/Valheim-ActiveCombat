@@ -1,7 +1,7 @@
 using System.Globalization;
 using System.Text.RegularExpressions;
 
-namespace CombatFlow.Food;
+namespace ActiveCombat.Food;
 
 /// <summary>Shows food's stamina and eitr regen on the vanilla "hp/tick" line of its tooltip.</summary>
 internal static class FoodTooltip
@@ -20,11 +20,11 @@ internal static class FoodTooltip
         string extra = "";
         if (stamina > 0f)
         {
-            extra += $", <color=#ffff80ff>{Format(stamina)} $combatflow_stamina_per_tick</color>";
+            extra += $", <color=#ffff80ff>{Format(stamina)} $activecombat_stamina_per_tick</color>";
         }
         if (eitr > 0f)
         {
-            extra += $", <color=#9090ffff>{Format(eitr)} $combatflow_eitr_per_tick</color>";
+            extra += $", <color=#9090ffff>{Format(eitr)} $activecombat_eitr_per_tick</color>";
         }
         // A match evaluator, so the "$" of the tokens isn't read as a substitution.
         return HealthRegenLine.Replace(tooltip, match => match.Value + extra, 1);

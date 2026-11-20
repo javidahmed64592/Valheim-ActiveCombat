@@ -1,8 +1,8 @@
-using CombatFlow.Food;
+using ActiveCombat.Food;
 
 using HarmonyLib;
 
-namespace CombatFlow.Patches;
+namespace ActiveCombat.Patches;
 
 /// <summary>Remembers the maximums before eating, then fills by the difference once the food is applied.</summary>
 [HarmonyPatch(typeof(Player), nameof(Player.EatFood))]

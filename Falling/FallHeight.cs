@@ -1,8 +1,8 @@
-using CombatFlow.Core;
+using ActiveCombat.Core;
 
 using UnityEngine;
 
-namespace CombatFlow.Falling;
+namespace ActiveCombat.Falling;
 
 /// <summary>
 /// Vanilla hurts you by how far you fell from the highest point you reached in the air, so a jump's rise counts

@@ -1,8 +1,8 @@
-using CombatFlow.Core;
+using ActiveCombat.Core;
 
 using UnityEngine;
 
-namespace CombatFlow.Regen;
+namespace ActiveCombat.Regen;
 
 /// <summary>
 /// Regen bonuses from skills. On their own they are a floor: a skilled player always regenerates at least this fast.

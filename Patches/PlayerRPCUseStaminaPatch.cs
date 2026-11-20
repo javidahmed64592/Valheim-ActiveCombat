@@ -1,8 +1,8 @@
-using CombatFlow.Regen;
+using ActiveCombat.Regen;
 
 using HarmonyLib;
 
-namespace CombatFlow.Patches;
+namespace ActiveCombat.Patches;
 
 /// <summary>Replaces the regen delay vanilla sets every time stamina is used.</summary>
 [HarmonyPatch(typeof(Player), nameof(Player.RPC_UseStamina))]

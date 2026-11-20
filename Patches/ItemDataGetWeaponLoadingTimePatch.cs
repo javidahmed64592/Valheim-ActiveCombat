@@ -1,8 +1,8 @@
-using CombatFlow.Actions;
+using ActiveCombat.Actions;
 
 using HarmonyLib;
 
-namespace CombatFlow.Patches;
+namespace ActiveCombat.Patches;
 
 /// <summary>Scales reload time for crossbows, the grappling hook and Dundr, after vanilla's skill bonus.</summary>
 [HarmonyPatch(typeof(ItemDrop.ItemData), nameof(ItemDrop.ItemData.GetWeaponLoadingTime))]

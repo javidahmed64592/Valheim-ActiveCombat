@@ -1,6 +1,6 @@
-using CombatFlow.Core;
+using ActiveCombat.Core;
 
-namespace CombatFlow.Food;
+namespace ActiveCombat.Food;
 
 /// <summary>Fills health, stamina and eitr by however much eating raised each maximum.</summary>
 internal static class FoodFill

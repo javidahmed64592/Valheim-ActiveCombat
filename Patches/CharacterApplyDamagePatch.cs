@@ -1,8 +1,8 @@
-using CombatFlow.Magic;
+using ActiveCombat.Magic;
 
 using HarmonyLib;
 
-namespace CombatFlow.Patches;
+namespace ActiveCombat.Patches;
 
 /// <summary>
 /// ApplyDamage is the last step before health drops, after armour and resistances, and runs on the character's

@@ -1,10 +1,10 @@
 {
-  "name": "CombatFlow",
+  "name": "ActiveCombat",
   "description": "Smoother, more active combat: act on the move, instant gear swaps, faster reloads, food that heals straight away, skill-based regen, combo-driven adrenaline, fairer falls, and cheaper blood magic with a mana shield.",
   "version_number": "0.1.0",
   "dependencies": [
     "denikson-BepInExPack_Valheim-5.4.2360",
     "ValheimModding-Jotunn-2.30.2"
   ],
-  "website_url": "https://github.com/javidahmed64592/Valheim-CombatFlow"
+  "website_url": "https://github.com/javidahmed64592/Valheim-ActiveCombat"
 }

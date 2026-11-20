@@ -1,9 +1,9 @@
-using CombatFlow.Food;
-using CombatFlow.Magic;
+using ActiveCombat.Food;
+using ActiveCombat.Magic;
 
 using HarmonyLib;
 
-namespace CombatFlow.Patches;
+namespace ActiveCombat.Patches;
 
 /// <summary>
 /// Keeps the "health use" line in item tooltips in step with the scaled blood magic cost, and adds food's stamina and

@@ -1,8 +1,8 @@
-[![CI](https://img.shields.io/github/actions/workflow/status/javidahmed64592/valheim-combatflow/ci.yml?branch=main&style=flat-square&label=CI&logo=github)](https://github.com/javidahmed64592/valheim-combatflow/actions/workflows/ci.yml)
-[![Package](https://img.shields.io/github/actions/workflow/status/javidahmed64592/valheim-combatflow/package.yml?branch=main&style=flat-square&label=Package&logo=github)](https://github.com/javidahmed64592/valheim-combatflow/actions/workflows/package.yml)
+[![CI](https://img.shields.io/github/actions/workflow/status/javidahmed64592/valheim-activecombat/ci.yml?branch=main&style=flat-square&label=CI&logo=github)](https://github.com/javidahmed64592/valheim-activecombat/actions/workflows/ci.yml)
+[![Package](https://img.shields.io/github/actions/workflow/status/javidahmed64592/valheim-activecombat/package.yml?branch=main&style=flat-square&label=Package&logo=github)](https://github.com/javidahmed64592/valheim-activecombat/actions/workflows/package.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-# CombatFlow
+# ActiveCombat
 
 Smoother, more active combat: act on the move, instant gear swaps, faster reloads, food that heals straight away, skill-based regen, combo-driven adrenaline, fairer falls, and cheaper blood magic with a mana shield.
 
@@ -48,7 +48,7 @@ Combat stays just as dangerous, but you spend less time waiting on your stamina 
 
 ## Configuration
 
-Settings are in `BepInEx/config/javidahmed64592.combatflow.cfg`.
+Settings are in `BepInEx/config/javidahmed64592.activecombat.cfg`.
 Settings marked "(Synced with server)" use the server's values when the server has the mod installed.
 Every change above can be tuned or turned off.
 
@@ -63,4 +63,4 @@ Nothing is saved to your world or character, so the mod can be removed at any ti
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/javidahmed64592/Valheim-CombatFlow/blob/main/LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/javidahmed64592/Valheim-ActiveCombat/blob/main/LICENSE) file for details.

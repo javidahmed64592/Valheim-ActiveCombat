@@ -3,7 +3,7 @@ using System.Reflection;
 
 using HarmonyLib;
 
-namespace CombatFlow.Core;
+namespace ActiveCombat.Core;
 
 /// <summary>Small transpiler helpers that count their matches, so a game update that moves the code fails loudly.</summary>
 internal static class Transpile
@@ -48,7 +48,7 @@ internal static class Transpile
     {
         if (count == 0)
         {
-            CombatFlowPlugin.Log.LogWarning($"{patchName}: found nothing to patch. The game may have changed, so this feature is off.");
+            ActiveCombatPlugin.Log.LogWarning($"{patchName}: found nothing to patch. The game may have changed, so this feature is off.");
         }
     }
 }

@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework>
-    <AssemblyName>CombatFlow</AssemblyName>
+    <AssemblyName>ActiveCombat</AssemblyName>
     <Description>Smoother, more active combat: act on the move, instant gear swaps, faster reloads, food that heals straight away, skill-based regen, combo-driven adrenaline, fairer falls, and cheaper blood magic with a mana shield.</Description>
     <Version>0.1.0</Version>
     <LangVersion>latest</LangVersion>
@@ -23,7 +23,7 @@
 
   <!-- Translations/<Language>.json, embedded and loaded by Translations.Load. -->
   <ItemGroup>
-    <EmbeddedResource Include="Translations\*.json" LogicalName="CombatFlow.Translations.%(Filename).json" />
+    <EmbeddedResource Include="Translations\*.json" LogicalName="ActiveCombat.Translations.%(Filename).json" />
   </ItemGroup>
 
   <!-- In CI (GitHub Actions) there is no local Valheim install, so game/BepInEx DLLs

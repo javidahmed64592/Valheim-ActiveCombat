@@ -1,8 +1,8 @@
-using CombatFlow.Core;
+using ActiveCombat.Core;
 
 using UnityEngine;
 
-namespace CombatFlow.Adrenaline;
+namespace ActiveCombat.Adrenaline;
 
 /// <summary>
 /// Reworks how the local player's adrenaline fills and drains. Weapon hits give more, more again while you keep

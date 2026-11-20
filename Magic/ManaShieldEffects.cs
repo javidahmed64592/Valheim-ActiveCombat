@@ -1,8 +1,8 @@
-using CombatFlow.Core;
+using ActiveCombat.Core;
 
 using UnityEngine;
 
-namespace CombatFlow.Magic;
+namespace ActiveCombat.Magic;
 
 /// <summary>
 /// Shows the mana shield at work with the Staff of Protection's own effects: its hit shimmer where the shield takes a

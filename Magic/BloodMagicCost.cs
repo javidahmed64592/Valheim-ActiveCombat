@@ -1,11 +1,11 @@
 using System.Globalization;
 using System.Text.RegularExpressions;
 
-using CombatFlow.Core;
+using ActiveCombat.Core;
 
 using UnityEngine;
 
-namespace CombatFlow.Magic;
+namespace ActiveCombat.Magic;
 
 /// <summary>
 /// Blood magic staffs (Staff of Protection, Dead Raiser, Spirit Caller, Trollstav and others) cost 40 to 60% of

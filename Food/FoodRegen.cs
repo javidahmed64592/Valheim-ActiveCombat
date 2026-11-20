@@ -1,7 +1,7 @@
-using CombatFlow.Core;
-using CombatFlow.Regen;
+using ActiveCombat.Core;
+using ActiveCombat.Regen;
 
-namespace CombatFlow.Food;
+namespace ActiveCombat.Food;
 
 /// <summary>
 /// Food restores stamina and eitr as well as health. Each food's stamina and eitr regen keep the same proportion to

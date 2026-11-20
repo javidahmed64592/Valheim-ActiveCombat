@@ -1,8 +1,8 @@
-using CombatFlow.Falling;
+using ActiveCombat.Falling;
 
 using HarmonyLib;
 
-namespace CombatFlow.Patches;
+namespace ActiveCombat.Patches;
 
 /// <summary>Adjusts the fall height just before vanilla turns it into fall damage on landing.</summary>
 [HarmonyPatch(typeof(Character), nameof(Character.UpdateGroundContact))]

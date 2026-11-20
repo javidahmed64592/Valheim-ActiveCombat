@@ -1,12 +1,12 @@
 using System.Collections.Generic;
 using System.Reflection;
 
-using CombatFlow.Actions;
-using CombatFlow.Core;
+using ActiveCombat.Actions;
+using ActiveCombat.Core;
 
 using HarmonyLib;
 
-namespace CombatFlow.Patches;
+namespace ActiveCombat.Patches;
 
 /// <summary>
 /// Scales the stamina a reload drains each second. The drain is tiny (1/s on crossbows), but it calls UseStamina every
