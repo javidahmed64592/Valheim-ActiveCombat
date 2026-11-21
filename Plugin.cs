@@ -14,8 +14,8 @@ namespace ActiveCombat;
 public class ActiveCombatPlugin : BaseUnityPlugin
 {
     public const string PluginGUID = "javidahmed64592.activecombat";
-    public const string PluginName = "Combat Flow";
-    public const string PluginVersion = "0.1.0";
+    public const string PluginName = "Active Combat";
+    public const string PluginVersion = "0.1.1";
 
     internal static BepInEx.Logging.ManualLogSource Log { get; private set; }
 

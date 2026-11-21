@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.1
+
+- The mod now shows as "Active Combat" in the BepInEx log and mod managers (it still said "Combat Flow" after the rename).
+
 ## 0.1.0
 
 First release.
