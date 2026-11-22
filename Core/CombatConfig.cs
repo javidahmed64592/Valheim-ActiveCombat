@@ -58,7 +58,7 @@ internal static class CombatConfig
             new ConfigDescription("Multiplies how long stamina waits after you use it before it starts regenerating. Vanilla waits 1 second; 0 starts straight away. (Synced with server)",
                 new AcceptableValueRange<float>(0f, 2f), Synced()));
         StaminaRegenWhileActing = config.Bind("Stamina", "RegenWhileActing", 0.5f,
-            new ConfigDescription("Share of your normal stamina regen you keep while attacking or dodging. Vanilla stops regen until the attack or dodge animation ends, even after the regen delay is over; 0 is vanilla, 1 regenerates at the full rate. Swimming and being over-encumbered still stop regen. (Synced with server)",
+            new ConfigDescription("Share of your normal stamina regen you keep while attacking or dodging, earned with skill: it grows with your skill in the weapon in hand (Unarmed when punching) or Dodge, and reaches this value at 100, so a beginner gets almost none. Vanilla stops regen until the attack or dodge animation ends, even after the regen delay is over; 0 is vanilla, 1 regenerates at the full rate at skill 100. Swimming and being over-encumbered still stop regen. (Synced with server)",
                 new AcceptableValueRange<float>(0f, 1f), Synced()));
         AgilityRegenBonus = config.Bind("Stamina", "AgilitySkillRegenBonus", 0.5f,
             new ConfigDescription("Extra stamina regen from the Run, Jump, Swim, Sneak and Dodge skills. It grows with their average level and reaches this value when all are 100, so 0.5 is +50%. Without Rested it is the least you get; with Rested see Regen.SkillStackShare. (Synced with server)",
