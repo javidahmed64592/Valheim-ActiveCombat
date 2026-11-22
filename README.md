@@ -18,7 +18,7 @@ Combat stays just as dangerous, but you spend less time waiting on your stamina 
 ## Stamina and Eitr
 
 - Stamina starts regenerating after half the vanilla delay.
-- Stamina keeps coming back at half speed during attacks and dodges, instead of waiting for the whole animation to end.
+- Stamina keeps coming back during attacks and dodges, instead of waiting for the whole animation to end. How much depends on your skill with the weapon in hand (Unarmed when punching) or Dodge: almost none for a beginner, up to half speed at skill 100.
 - Stamina regenerates faster as your Run, Jump, Swim, Sneak and Dodge skills grow, and eitr as your best magic skill grows, up to +50% at skill 100.
 - These skill bonuses have diminishing returns alongside Rested, so the two don't simply add up.
 - Swimming and being over-encumbered still stop stamina regen.

@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.2
+
+- Stamina regen during attacks and dodges is now earned with skill: it grows with your skill in the weapon in hand (Unarmed when punching) or Dodge, from none at skill 0 to half speed at skill 100. Early swings and punches no longer refund most of their own cost.
+
 ## 0.1.1
 
 - The mod now shows as "Active Combat" in the BepInEx log and mod managers (it still said "Combat Flow" after the rename).
