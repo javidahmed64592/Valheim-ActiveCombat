@@ -4,6 +4,7 @@ using System.Reflection.Emit;
 
 using ActiveCombat.Adrenaline;
 using ActiveCombat.Core;
+using ActiveCombat.Progression;
 
 using HarmonyLib;
 
@@ -53,7 +54,7 @@ internal static class Projectile_OnHit_Patch
     }
 }
 
-/// <summary>Every hit on a character is sent through here, right before vanilla gives that hit's adrenaline.</summary>
+/// <summary>Every hit on a character is sent through here, right before vanilla gives that hit's adrenaline and skill experience.</summary>
 [HarmonyPatch(typeof(Character), nameof(Character.Damage))]
 internal static class Character_Damage_Patch
 {
@@ -62,6 +63,7 @@ internal static class Character_Damage_Patch
         if (hit != null)
         {
             HitDamage.OnHit(__instance, hit);
+            SkillXp.OnHit(__instance, hit);
         }
     }
 }

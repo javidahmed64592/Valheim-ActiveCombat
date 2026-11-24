@@ -39,6 +39,11 @@ internal static class CombatConfig
     public static ConfigEntry<float> LevelCurveExponent;
     public static ConfigEntry<float> LevelCurveScale;
     public static ConfigEntry<float> DeathProgressLoss;
+    public static ConfigEntry<float> XpDamageReference;
+    public static ConfigEntry<float> XpDamageScaling;
+    public static ConfigEntry<float> XpStarBonus;
+    public static ConfigEntry<float> XpBossMultiplier;
+    public static ConfigEntry<float> XpExtraTargetShare;
 
     public static ConfigEntry<float> BloodMagicHealthMultiplier;
     public static ConfigEntry<float> ManaShieldShare;
@@ -140,6 +145,22 @@ internal static class CombatConfig
                 new AcceptableValueRange<float>(0.1f, 2f), Synced()));
         DeathProgressLoss = config.Bind("Skills", "DeathProgressLoss", 0.8f,
             new ConfigDescription("Dying no longer costs combat skill levels. Instead each combat skill loses this share of a level's worth of progress towards its next level, never going below the start of its current level. This is the share on the Hard death penalty setting; the world setting scales it down: Normal two thirds of it (53% at 0.8), Easy a third (27%), Very Easy and Casual a tenth (8%). Hardcore still resets every skill. Other skills lose levels as in vanilla. (Synced with server)",
+                new AcceptableValueRange<float>(0f, 1f), Synced()));
+
+        XpDamageScaling = config.Bind("Skills", "XpDamageScaling", 0.5f,
+            new ConfigDescription("How much harder hits give more experience, for weapon, magic and summon hits on creatures and for blocks. A hit's experience is multiplied by (damage / XpDamageReference) to this power, between 0.5 and 3 times vanilla's. Damage counts after the target's resistances, and only up to the health it had left, so overkill on weak creatures earns nothing extra. At 0.5 a flint weapon earns about 0.7 times vanilla and late game weapons over twice. 0 is vanilla. (Synced with server)",
+                new AcceptableValueRange<float>(0f, 1f), Synced()));
+        XpDamageReference = config.Bind("Skills", "XpDamageReference", 30f,
+            new ConfigDescription("The damage of a hit that earns exactly vanilla's experience, see XpDamageScaling. (Synced with server)",
+                new AcceptableValueRange<float>(5f, 200f), Synced()));
+        XpStarBonus = config.Bind("Skills", "XpStarBonus", 0.5f,
+            new ConfigDescription("Extra experience for hitting or blocking a starred creature, per star: 0.5 gives 1.5 times for one star and 2 times for two. (Synced with server)",
+                new AcceptableValueRange<float>(0f, 2f), Synced()));
+        XpBossMultiplier = config.Bind("Skills", "XpBossMultiplier", 2f,
+            new ConfigDescription("Multiplies the experience for hitting or blocking a boss. (Synced with server)",
+                new AcceptableValueRange<float>(1f, 5f), Synced()));
+        XpExtraTargetShare = config.Bind("Skills", "XpExtraTargetShare", 0.5f,
+            new ConfigDescription("Vanilla gives the same experience however many creatures one swing hits. Here the best hit counts in full and every other creature hit by the same swing adds this share of its own experience. 0 is vanilla. (Synced with server)",
                 new AcceptableValueRange<float>(0f, 1f), Synced()));
 
         BloodMagicHealthMultiplier = config.Bind("Magic", "BloodMagicHealthMultiplier", 0.5f,

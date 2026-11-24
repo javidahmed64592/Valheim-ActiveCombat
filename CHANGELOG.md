@@ -4,6 +4,7 @@
 
 - **Movement:** you slide along creatures and other players you run into instead of sticking to them. Vanilla's friction between characters could hold you in place against an enemy slightly in your way, especially on slopes.
 - **Skills:** the combat skills (weapons, Blocking, magic, Run, Jump, Swim, Sneak and Dodge) need less experience for later levels: level 50 takes 60% of vanilla's total and level 100 about half. Other skills are unchanged.
+- **Skills:** weapon, magic and blood magic summon hits earn experience by the damage they really do (after resistances, capped at the target's remaining health), from about 0.7 times vanilla with early weapons to over twice late game. Blocks earn by the damage blocked. Starred creatures give 50% more per star, bosses double, and each extra creature hit by the same swing adds half its own experience.
 - **Skills:** dying no longer costs combat skill levels. Instead you lose part of your progress towards the next level, never going below the start of your current level: 80% of a level on the Hard death penalty setting, 53% on Normal, 27% on Easy and 8% on Very Easy or Casual. Hardcore still resets every skill.
 
 ## 0.1.2
