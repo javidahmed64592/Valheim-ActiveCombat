@@ -36,6 +36,10 @@ internal static class CombatConfig
     public static ConfigEntry<float> AdrenalineSkillDecayReduction;
     public static ConfigEntry<float> AdrenalineProcReset;
 
+    public static ConfigEntry<float> LevelCurveExponent;
+    public static ConfigEntry<float> LevelCurveScale;
+    public static ConfigEntry<float> DeathProgressLoss;
+
     public static ConfigEntry<float> BloodMagicHealthMultiplier;
     public static ConfigEntry<float> ManaShieldShare;
     public static ConfigEntry<float> ManaShieldEitrPerDamage;
@@ -127,6 +131,16 @@ internal static class CombatConfig
         AdrenalineProcReset = config.Bind("Adrenaline", "ProcResetShare", 0.3f,
             new ConfigDescription("Share of the bar adrenaline drops back to when it fills and triggers a trinket, so 0.3 leaves it 30% full. 0 empties it as in vanilla. (Synced with server)",
                 new AcceptableValueRange<float>(0f, 0.9f), Synced()));
+
+        LevelCurveExponent = config.Bind("Skills", "LevelCurveExponent", 1.3f,
+            new ConfigDescription("How steeply the experience needed per level climbs for the combat skills (weapons, Blocking, magic, Run, Jump, Swim, Sneak and Dodge). Each level needs LevelCurveScale × (level + 1) to this power, plus 0.5. Vanilla is 1.5, which makes late levels very slow; 1.3 with a scale of 0.6 makes level 50 need 60% of vanilla's total and level 100 about half. Other skills stay vanilla. (Synced with server)",
+                new AcceptableValueRange<float>(1f, 1.5f), Synced()));
+        LevelCurveScale = config.Bind("Skills", "LevelCurveScale", 0.6f,
+            new ConfigDescription("Multiplies the experience needed per level for the combat skills, see LevelCurveExponent. Vanilla is 0.5. (Synced with server)",
+                new AcceptableValueRange<float>(0.1f, 2f), Synced()));
+        DeathProgressLoss = config.Bind("Skills", "DeathProgressLoss", 0.8f,
+            new ConfigDescription("Dying no longer costs combat skill levels. Instead each combat skill loses this share of a level's worth of progress towards its next level, never going below the start of its current level. This is the share on the Hard death penalty setting; the world setting scales it down: Normal two thirds of it (53% at 0.8), Easy a third (27%), Very Easy and Casual a tenth (8%). Hardcore still resets every skill. Other skills lose levels as in vanilla. (Synced with server)",
+                new AcceptableValueRange<float>(0f, 1f), Synced()));
 
         BloodMagicHealthMultiplier = config.Bind("Magic", "BloodMagicHealthMultiplier", 0.5f,
             new ConfigDescription("Multiplies the health blood magic staffs cost per cast (40 to 60% of your health in vanilla). 0.5 halves it, 0 removes the cost, 1 is vanilla. (Synced with server)",

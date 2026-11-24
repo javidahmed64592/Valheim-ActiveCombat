@@ -2,7 +2,9 @@
 
 ## Unreleased
 
-- You slide along creatures and other players you run into instead of sticking to them. Vanilla's friction between characters could hold you in place against an enemy slightly in your way, especially on slopes.
+- **Movement:** you slide along creatures and other players you run into instead of sticking to them. Vanilla's friction between characters could hold you in place against an enemy slightly in your way, especially on slopes.
+- **Skills:** the combat skills (weapons, Blocking, magic, Run, Jump, Swim, Sneak and Dodge) need less experience for later levels: level 50 takes 60% of vanilla's total and level 100 about half. Other skills are unchanged.
+- **Skills:** dying no longer costs combat skill levels. Instead you lose part of your progress towards the next level, never going below the start of your current level: 80% of a level on the Hard death penalty setting, 53% on Normal, 27% on Easy and 8% on Very Easy or Casual. Hardcore still resets every skill.
 
 ## 0.1.2
 
