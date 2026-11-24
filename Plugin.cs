@@ -16,7 +16,7 @@ public class ActiveCombatPlugin : BaseUnityPlugin
 {
     public const string PluginGUID = "javidahmed64592.activecombat";
     public const string PluginName = "Active Combat";
-    public const string PluginVersion = "0.1.2";
+    public const string PluginVersion = "0.2.0";
 
     internal static BepInEx.Logging.ManualLogSource Log { get; private set; }
 

@@ -4,7 +4,7 @@
 
 # ActiveCombat
 
-Smoother, more active combat: act on the move, instant gear swaps, faster reloads, food that heals straight away, skill-based regen, combo-driven adrenaline, fairer falls, and cheaper blood magic with a mana shield.
+Smoother, more active combat: act on the move, instant gear swaps, faster reloads, food that heals straight away, skill-based regen, combo-driven adrenaline, fairer falls, a mana shield, and skills that grow faster the harder you fight.
 
 Combat stays just as dangerous, but you spend less time waiting on your stamina bar and more time fighting.
 
@@ -69,12 +69,13 @@ Every change above can be tuned or turned off.
 
 ## Compatibility
 
-- Other mods that change equip times, reload times, food, stamina and eitr regeneration, adrenaline, magic costs, fall damage or damage taken may conflict with this mod.
+- Other mods that change equip times, reload times, food, stamina and eitr regeneration, adrenaline, magic costs, fall damage, damage taken, skill experience or the skill death penalty may conflict with this mod.
+- [SkillTracker](https://thunderstore.io/c/valheim/p/Aestelwen/SkillTracker/) shows the experience each hit, block and dodge gives, which makes the skill changes easy to see.
 - This mod has not been tested with a gamepad, only with keyboard and mouse.
 
 ## Uninstalling
 
-Nothing is saved to your world or character, so the mod can be removed at any time.
+Nothing is saved to your world or character, so the mod can be removed at any time. Skill levels you earned stay, and vanilla's level curve and death penalty apply again.
 
 ## License
 
