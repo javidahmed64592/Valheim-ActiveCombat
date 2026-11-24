@@ -50,6 +50,12 @@ Combat stays just as dangerous, but you spend less time waiting on your stamina 
 - Jumping off a ledge no longer adds your jump's height to the fall, and ending feather fall in mid-air only counts the fall after it ended.
 - Short falls hurt less, while falls of 20 metres or more still do the full 100 damage.
 
+## Skill Tracker
+
+- Whenever you earn skill experience, the skill appears below the minimap with its icon, level and progress towards the next level, and the experience you earned rises beside it.
+- Up to three skills show at once, each fading out a few seconds after its last gain. The level flashes gold when it goes up.
+- Each part can be turned off in the config.
+
 ## Configuration
 
 Settings are in `BepInEx/config/javidahmed64592.activecombat.cfg`.

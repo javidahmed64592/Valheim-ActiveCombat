@@ -36,6 +36,10 @@ internal static class CombatConfig
     public static ConfigEntry<float> AdrenalineSkillDecayReduction;
     public static ConfigEntry<float> AdrenalineProcReset;
 
+    public static ConfigEntry<bool> ShowSkillTracker;
+    public static ConfigEntry<bool> ShowXpDrops;
+    public static ConfigEntry<float> TrackerFadeDelay;
+
     public static ConfigEntry<float> BloodMagicHealthMultiplier;
     public static ConfigEntry<float> ManaShieldShare;
     public static ConfigEntry<float> ManaShieldEitrPerDamage;
@@ -127,6 +131,14 @@ internal static class CombatConfig
         AdrenalineProcReset = config.Bind("Adrenaline", "ProcResetShare", 0.3f,
             new ConfigDescription("Share of the bar adrenaline drops back to when it fills and triggers a trinket, so 0.3 leaves it 30% full. 0 empties it as in vanilla. (Synced with server)",
                 new AcceptableValueRange<float>(0f, 0.9f), Synced()));
+
+        ShowSkillTracker = config.Bind("Interface", "ShowSkillTracker", true,
+            "Shows the skills you earn experience in below the minimap, with their level and progress towards the next level.");
+        ShowXpDrops = config.Bind("Interface", "ShowXpDrops", true,
+            "Shows the experience each gain gives, rising beside the skill tracker.");
+        TrackerFadeDelay = config.Bind("Interface", "TrackerFadeDelay", 6f,
+            new ConfigDescription("Seconds a skill stays in the tracker after its last gain before fading out.",
+                new AcceptableValueRange<float>(1f, 30f)));
 
         BloodMagicHealthMultiplier = config.Bind("Magic", "BloodMagicHealthMultiplier", 0.5f,
             new ConfigDescription("Multiplies the health blood magic staffs cost per cast (40 to 60% of your health in vanilla). 0.5 halves it, 0 removes the cost, 1 is vanilla. (Synced with server)",
