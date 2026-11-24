@@ -49,7 +49,10 @@ Combat stays just as dangerous, but you spend less time waiting on your stamina 
 
 These changes apply to the combat skills (weapons, Blocking, magic, Run, Jump, Swim, Sneak and Dodge). Other skills are unchanged.
 
-- Later levels need less experience: level 50 takes 60% of vanilla's total and level 100 about half, while the first levels feel much the same.
+- Later levels need less experience: level 50 takes 78% of vanilla's total and level 100 72%, while the first levels feel much the same.
+- Harder hits teach you more. Weapon, magic and blood magic summon hits earn experience by the damage they really do, after the target's resistances and only up to the health it had left: early weapons earn a little less than vanilla, late game weapons over twice as much. Blocking earns by the damage you block.
+- Tougher foes teach you more: half as much again per star, and double against bosses.
+- Hitting several creatures with one swing earns more, where vanilla counts the swing once.
 - Dying never costs a combat skill level. Instead you lose part of your progress towards the next level, but never below the start of your current level: up to 80% of a level on the Hard death penalty setting, 53% on Normal, 27% on Easy and 8% on Very Easy or Casual. Hardcore still resets every skill.
 
 ## Falling

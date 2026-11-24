@@ -67,7 +67,7 @@ internal static class HitDamage
     }
 
     /// <summary>The hit's damage after the target's resistances, backstab and stagger bonuses.</summary>
-    private static float LandedDamage(Character target, HitData hit)
+    public static float LandedDamage(Character target, HitData hit)
     {
         HitData landed = hit.Clone();
         WeakSpot weakSpot = target.GetWeakSpot(target.FindWeakSpotIndex(hit.m_hitCollider));
