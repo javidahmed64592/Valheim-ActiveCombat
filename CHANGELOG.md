@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- **Skills:** the combat skills (weapons, Blocking, magic, Run, Jump, Swim, Sneak and Dodge) need less experience for later levels: level 50 takes 60% of vanilla's total and level 100 about half. Other skills are unchanged.
+- **Skills:** dying takes 2% of each combat skill instead of 5% (still scaled by the world's death penalty setting) and keeps your progress towards the next level.
+
 ## 0.1.2
 
 - Stamina regen during attacks and dodges is now earned with skill: it grows with your skill in the weapon in hand (Unarmed when punching) or Dodge, from none at skill 0 to half speed at skill 100. Early swings and punches no longer refund most of their own cost.

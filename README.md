@@ -41,6 +41,13 @@ Combat stays just as dangerous, but you spend less time waiting on your stamina 
 - Blood magic staffs cost half as much health to cast.
 - **Mana shield:** while you have eitr, a quarter of the damage you take is paid from eitr instead of health, giving mages the defence their light armour lacks. A shimmer shows each hit it takes, and it shatters when a hit drains the last of your eitr.
 
+## Skills
+
+These changes apply to the combat skills (weapons, Blocking, magic, Run, Jump, Swim, Sneak and Dodge). Other skills are unchanged.
+
+- Later levels need less experience: level 50 takes 60% of vanilla's total and level 100 about half, while the first levels feel much the same.
+- Dying takes 2% of each combat skill instead of 5% (still scaled by your world's death penalty setting), and you keep your progress towards the next level.
+
 ## Falling
 
 - Jumping off a ledge no longer adds your jump's height to the fall, and ending feather fall in mid-air only counts the fall after it ended.
