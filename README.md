@@ -4,7 +4,7 @@
 
 # ActiveCombat
 
-Smoother, more active combat: act on the move, instant gear swaps, faster reloads, food that heals straight away, skill-based regen, combo-driven adrenaline, fairer falls, and cheaper blood magic with a mana shield.
+Smoother, more active combat: act on the move, keep your stamina flowing, and grow your skills faster the harder you fight.
 
 Combat stays just as dangerous, but you spend less time waiting on your stamina bar and more time fighting.
 
@@ -25,7 +25,6 @@ Combat stays just as dangerous, but you spend less time waiting on your stamina 
 - Stamina keeps coming back during attacks and dodges, instead of waiting for the whole animation to end. How much depends on your skill with the weapon in hand (Unarmed when punching) or Dodge: almost none for a beginner, up to half speed at skill 100.
 - Stamina regenerates faster as your Run, Jump, Swim, Sneak and Dodge skills grow, and eitr as your best magic skill grows, up to +50% at skill 100.
 - These skill bonuses have diminishing returns alongside Rested, so the two don't simply add up.
-- Swimming and being over-encumbered still stop stamina regen.
 
 ## Food
 
@@ -47,7 +46,7 @@ Combat stays just as dangerous, but you spend less time waiting on your stamina 
 
 ## Skills
 
-These changes apply to the combat skills (weapons, Blocking, magic, Run, Jump, Swim, Sneak and Dodge). Other skills are unchanged.
+These changes apply to the combat skills (weapons, Blocking, magic, Run, Jump, Swim, Sneak and Dodge).
 
 - Later levels need less experience: level 50 takes 78% of vanilla's total and level 100 72%, while the first levels feel much the same.
 - Harder hits teach you more. Weapon, magic and blood magic summon hits earn experience by the damage they really do, after the target's resistances and only up to the health it had left: early weapons earn a little less than vanilla, late game weapons over twice as much. Blocking earns by the damage you block.
@@ -69,12 +68,13 @@ Every change above can be tuned or turned off.
 
 ## Compatibility
 
-- Other mods that change equip times, reload times, food, stamina and eitr regeneration, adrenaline, magic costs, fall damage or damage taken may conflict with this mod.
+- Other mods that change equip times, reload times, food, stamina and eitr regeneration, adrenaline, magic costs, fall damage, damage taken, skill experience or the skill death penalty may conflict with this mod.
+- [SkillTracker](https://thunderstore.io/c/valheim/p/Aestelwen/SkillTracker/) shows the experience each hit, block and dodge gives, which makes the skill changes easy to see.
 - This mod has not been tested with a gamepad, only with keyboard and mouse.
 
 ## Uninstalling
 
-Nothing is saved to your world or character, so the mod can be removed at any time.
+Nothing is saved to your world or character, so the mod can be removed at any time. Skill levels you earned stay, and vanilla's level curve and death penalty apply again.
 
 ## License
 

@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.2.0
 
 - **Movement:** you slide along creatures and other players you run into instead of sticking to them. Vanilla's friction between characters could hold you in place against an enemy slightly in your way, especially on slopes.
 - **Skills:** the combat skills (weapons, Blocking, magic, Run, Jump, Swim, Sneak and Dodge) need less experience for later levels: level 50 takes 78% of vanilla's total and level 100 72%, while early levels stay close to vanilla. Other skills are unchanged.
