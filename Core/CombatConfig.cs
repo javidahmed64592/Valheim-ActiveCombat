@@ -137,10 +137,10 @@ internal static class CombatConfig
             new ConfigDescription("Share of the bar adrenaline drops back to when it fills and triggers a trinket, so 0.3 leaves it 30% full. 0 empties it as in vanilla. (Synced with server)",
                 new AcceptableValueRange<float>(0f, 0.9f), Synced()));
 
-        LevelCurveExponent = config.Bind("Skills", "LevelCurveExponent", 1.3f,
-            new ConfigDescription("How steeply the experience needed per level climbs for the combat skills (weapons, Blocking, magic, Run, Jump, Swim, Sneak and Dodge). Each level needs LevelCurveScale × (level + 1) to this power, plus 0.5. Vanilla is 1.5, which makes late levels very slow; 1.3 with a scale of 0.6 makes level 50 need 60% of vanilla's total and level 100 about half. Other skills stay vanilla. (Synced with server)",
+        LevelCurveExponent = config.Bind("Skills", "LevelCurveExponent", 1.4f,
+            new ConfigDescription("How steeply the experience needed per level climbs for the combat skills (weapons, Blocking, magic, Run, Jump, Swim, Sneak and Dodge). Each level needs LevelCurveScale × (level + 1) to this power, plus 0.5. Vanilla is 1.5, which makes late levels very slow; 1.4 with a scale of 0.55 keeps early levels close to vanilla while level 50 needs 78% of vanilla's total and level 100 72%. Other skills stay vanilla. (Synced with server)",
                 new AcceptableValueRange<float>(1f, 1.5f), Synced()));
-        LevelCurveScale = config.Bind("Skills", "LevelCurveScale", 0.6f,
+        LevelCurveScale = config.Bind("Skills", "LevelCurveScale", 0.55f,
             new ConfigDescription("Multiplies the experience needed per level for the combat skills, see LevelCurveExponent. Vanilla is 0.5. (Synced with server)",
                 new AcceptableValueRange<float>(0.1f, 2f), Synced()));
         DeathProgressLoss = config.Bind("Skills", "DeathProgressLoss", 0.8f,
