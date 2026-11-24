@@ -44,6 +44,8 @@ internal static class CombatConfig
     public static ConfigEntry<float> XpStarBonus;
     public static ConfigEntry<float> XpBossMultiplier;
     public static ConfigEntry<float> XpExtraTargetShare;
+    public static ConfigEntry<float> DodgeCombatXp;
+    public static ConfigEntry<float> PerfectDodgeXp;
 
     public static ConfigEntry<float> BloodMagicHealthMultiplier;
     public static ConfigEntry<float> ManaShieldShare;
@@ -162,6 +164,13 @@ internal static class CombatConfig
         XpExtraTargetShare = config.Bind("Skills", "XpExtraTargetShare", 0.5f,
             new ConfigDescription("Vanilla gives the same experience however many creatures one swing hits. Here the best hit counts in full and every other creature hit by the same swing adds this share of its own experience. 0 is vanilla. (Synced with server)",
                 new AcceptableValueRange<float>(0f, 1f), Synced()));
+
+        DodgeCombatXp = config.Bind("Skills", "DodgeCombatXp", 20f,
+            new ConfigDescription("Multiplies the Dodge experience of a dodge made with an enemy that has spotted you within 15 metres. Vanilla's 0.025 per dodge takes over 100,000 dodges to reach level 50; at 20 a dodge in a fight gives 0.5. Dodges away from fights give vanilla's amount, and a dodge you have no stamina for gives nothing. (Synced with server)",
+                new AcceptableValueRange<float>(1f, 50f), Synced()));
+        PerfectDodgeXp = config.Bind("Skills", "PerfectDodgeXp", 4f,
+            new ConfigDescription("Multiplies the Dodge experience of a perfect dodge, when a hit lands during your dodge (0.25 in vanilla, so 1 at 4). It adds to the dodge's own experience. (Synced with server)",
+                new AcceptableValueRange<float>(1f, 10f), Synced()));
 
         BloodMagicHealthMultiplier = config.Bind("Magic", "BloodMagicHealthMultiplier", 0.5f,
             new ConfigDescription("Multiplies the health blood magic staffs cost per cast (40 to 60% of your health in vanilla). 0.5 halves it, 0 removes the cost, 1 is vanilla. (Synced with server)",
