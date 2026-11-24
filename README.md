@@ -4,7 +4,7 @@
 
 # ActiveCombat
 
-Smoother, more active combat: act on the move, instant gear swaps, faster reloads, food that heals straight away, skill-based regen, combo-driven adrenaline, fairer falls, a mana shield, and skills that grow faster the harder you fight.
+Smoother, more active combat: act on the move, keep your stamina flowing, and grow your skills faster the harder you fight.
 
 Combat stays just as dangerous, but you spend less time waiting on your stamina bar and more time fighting.
 

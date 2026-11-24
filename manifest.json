@@ -1,6 +1,6 @@
 {
   "name": "ActiveCombat",
-  "description": "Smoother, more active combat: act on the move, instant gear swaps, faster reloads, food that heals straight away, skill-based regen, combo-driven adrenaline, fairer falls, a mana shield, and skills that grow faster the harder you fight.",
+  "description": "Smoother, more active combat: act on the move, keep your stamina flowing, and grow your skills faster the harder you fight.",
   "version_number": "0.2.0",
   "dependencies": [
     "denikson-BepInExPack_Valheim-5.4.2360",

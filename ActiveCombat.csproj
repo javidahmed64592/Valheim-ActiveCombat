@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework>
     <AssemblyName>ActiveCombat</AssemblyName>
-    <Description>Smoother, more active combat: act on the move, instant gear swaps, faster reloads, food that heals straight away, skill-based regen, combo-driven adrenaline, fairer falls, a mana shield, and skills that grow faster the harder you fight.</Description>
+    <Description>Smoother, more active combat: act on the move, keep your stamina flowing, and grow your skills faster the harder you fight.</Description>
     <Version>0.2.0</Version>
     <LangVersion>latest</LangVersion>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
