@@ -3,7 +3,7 @@
 ## Unreleased
 
 - **Skill tracker:** skills you earn experience in show below the minimap with their level and progress towards the next level, and each gain's experience rises beside them.
-- You slide along creatures and other players you run into instead of sticking to them. Vanilla's friction between characters could hold you in place against an enemy slightly in your way, especially on slopes.
+- **Movement:** you slide along creatures and other players you run into instead of sticking to them. Vanilla's friction between characters could hold you in place against an enemy slightly in your way, especially on slopes.
 
 ## 0.1.2
 
