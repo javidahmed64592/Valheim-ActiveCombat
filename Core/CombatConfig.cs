@@ -38,8 +38,7 @@ internal static class CombatConfig
 
     public static ConfigEntry<float> LevelCurveExponent;
     public static ConfigEntry<float> LevelCurveScale;
-    public static ConfigEntry<float> DeathLossMultiplier;
-    public static ConfigEntry<bool> DeathKeepsProgress;
+    public static ConfigEntry<float> DeathProgressLoss;
 
     public static ConfigEntry<float> BloodMagicHealthMultiplier;
     public static ConfigEntry<float> ManaShieldShare;
@@ -139,12 +138,9 @@ internal static class CombatConfig
         LevelCurveScale = config.Bind("Skills", "LevelCurveScale", 0.6f,
             new ConfigDescription("Multiplies the experience needed per level for the combat skills, see LevelCurveExponent. Vanilla is 0.5. (Synced with server)",
                 new AcceptableValueRange<float>(0.1f, 2f), Synced()));
-        DeathLossMultiplier = config.Bind("Skills", "DeathLossMultiplier", 0.4f,
-            new ConfigDescription("Multiplies the share of each combat skill you lose on death, after the world's death penalty setting. Vanilla takes 5% at the default setting, so 0.4 takes 2%. 1 is vanilla, 0 loses nothing. Other skills stay vanilla. (Synced with server)",
+        DeathProgressLoss = config.Bind("Skills", "DeathProgressLoss", 0.8f,
+            new ConfigDescription("Dying no longer costs combat skill levels. Instead each combat skill loses this share of a level's worth of progress towards its next level, never going below the start of its current level. This is the share on the Hard death penalty setting; the world setting scales it down: Normal two thirds of it (53% at 0.8), Easy a third (27%), Very Easy and Casual a tenth (8%). Hardcore still resets every skill. Other skills lose levels as in vanilla. (Synced with server)",
                 new AcceptableValueRange<float>(0f, 1f), Synced()));
-        DeathKeepsProgress = config.Bind("Skills", "DeathKeepsProgress", true,
-            new ConfigDescription("Dying keeps the progress you had made towards each combat skill's next level. Vanilla wipes it. (Synced with server)",
-                null, Synced()));
 
         BloodMagicHealthMultiplier = config.Bind("Magic", "BloodMagicHealthMultiplier", 0.5f,
             new ConfigDescription("Multiplies the health blood magic staffs cost per cast (40 to 60% of your health in vanilla). 0.5 halves it, 0 removes the cost, 1 is vanilla. (Synced with server)",

@@ -50,7 +50,7 @@ Combat stays just as dangerous, but you spend less time waiting on your stamina 
 These changes apply to the combat skills (weapons, Blocking, magic, Run, Jump, Swim, Sneak and Dodge). Other skills are unchanged.
 
 - Later levels need less experience: level 50 takes 60% of vanilla's total and level 100 about half, while the first levels feel much the same.
-- Dying takes 2% of each combat skill instead of 5% (still scaled by your world's death penalty setting), and you keep your progress towards the next level.
+- Dying never costs a combat skill level. Instead you lose part of your progress towards the next level, but never below the start of your current level: up to 80% of a level on the Hard death penalty setting, 53% on Normal, 27% on Easy and 8% on Very Easy or Casual. Hardcore still resets every skill.
 
 ## Falling
 
