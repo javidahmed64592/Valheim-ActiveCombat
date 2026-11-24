@@ -1,4 +1,5 @@
 using ActiveCombat.Core;
+using ActiveCombat.Movement;
 
 using BepInEx;
 
@@ -29,10 +30,12 @@ public class ActiveCombatPlugin : BaseUnityPlugin
 
         _harmony = new Harmony(PluginGUID);
         _harmony.PatchAll();
+        CharacterContacts.Subscribe();
     }
 
     private void OnDestroy()
     {
+        CharacterContacts.Unsubscribe();
         _harmony?.UnpatchSelf();
     }
 }

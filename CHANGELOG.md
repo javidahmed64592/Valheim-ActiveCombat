@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- You slide along creatures and other players you run into instead of sticking to them. Vanilla's friction between characters could hold you in place against an enemy slightly in your way, especially on slopes.
+
 ## 0.1.2
 
 - Stamina regen during attacks and dodges is now earned with skill: it grows with your skill in the weapon in hand (Unarmed when punching) or Dodge, from none at skill 0 to half speed at skill 100. Early swings and punches no longer refund most of their own cost.

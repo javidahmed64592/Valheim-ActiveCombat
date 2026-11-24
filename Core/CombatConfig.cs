@@ -9,6 +9,8 @@ internal static class CombatConfig
     public static ConfigEntry<float> ReloadTimeMultiplier;
     public static ConfigEntry<float> ReloadStaminaMultiplier;
 
+    public static ConfigEntry<bool> SlidePastCharacters;
+
     public static ConfigEntry<float> StaminaRegenDelayMultiplier;
     public static ConfigEntry<float> AgilityRegenBonus;
     public static ConfigEntry<float> StaminaRegenWhileActing;
@@ -53,6 +55,10 @@ internal static class CombatConfig
         ReloadStaminaMultiplier = config.Bind("Actions", "ReloadStaminaMultiplier", 0f,
             new ConfigDescription("Multiplies the stamina used while loading a crossbow. At 0 loading uses none, so stamina keeps regenerating while you load. 1 is vanilla. (Synced with server)",
                 new AcceptableValueRange<float>(0f, 2f), Synced()));
+
+        SlidePastCharacters = config.Bind("Movement", "SlidePastCharacters", true,
+            new ConfigDescription("You slide along creatures and other players you run into instead of sticking to them, so one slightly in your way can no longer hold you in place, even on a slope. They still block you head-on. (Synced with server)",
+                null, Synced()));
 
         StaminaRegenDelayMultiplier = config.Bind("Stamina", "RegenDelayMultiplier", 0.5f,
             new ConfigDescription("Multiplies how long stamina waits after you use it before it starts regenerating. Vanilla waits 1 second; 0 starts straight away. (Synced with server)",

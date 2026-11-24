@@ -15,6 +15,10 @@ Combat stays just as dangerous, but you spend less time waiting on your stamina 
 - Crossbows, the grappling hook and Dundr load in half the time, on top of the vanilla skill bonus.
 - Loading a crossbow no longer uses stamina, so stamina keeps regenerating while you load.
 
+## Movement
+
+- You slide along creatures and other players you run into instead of sticking to them, so one slightly in your way can no longer hold you in place on a slope. They still block you head-on.
+
 ## Stamina and Eitr
 
 - Stamina starts regenerating after half the vanilla delay.
