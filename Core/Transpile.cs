@@ -27,6 +27,34 @@ internal static class Transpile
         WarnIfNone(count, patchName);
     }
 
+    /// <summary>
+    /// Drops every call to <paramref name="methodName"/> (which must return nothing), popping the
+    /// <paramref name="stackValues"/> values it would have taken, including the instance.
+    /// </summary>
+    public static IEnumerable<CodeInstruction> RemoveCall(
+        IEnumerable<CodeInstruction> instructions, string methodName, int stackValues, string patchName)
+    {
+        int count = 0;
+        foreach (CodeInstruction instruction in instructions)
+        {
+            if (instruction.operand is MethodInfo method && method.Name == methodName && instruction.opcode.FlowControl == System.Reflection.Emit.FlowControl.Call)
+            {
+                CodeInstruction first = new(System.Reflection.Emit.OpCodes.Pop);
+                first.labels.AddRange(instruction.labels);
+                first.blocks.AddRange(instruction.blocks);
+                yield return first;
+                for (int i = 1; i < stackValues; i++)
+                {
+                    yield return new CodeInstruction(System.Reflection.Emit.OpCodes.Pop);
+                }
+                count++;
+                continue;
+            }
+            yield return instruction;
+        }
+        WarnIfNone(count, patchName);
+    }
+
     /// <summary>Passes every value read from <paramref name="field"/> through <paramref name="scale"/> (a static float -> float method).</summary>
     public static IEnumerable<CodeInstruction> ScaleField(
         IEnumerable<CodeInstruction> instructions, FieldInfo field, MethodInfo scale, string patchName)

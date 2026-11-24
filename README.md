@@ -53,6 +53,7 @@ These changes apply to the combat skills (weapons, Blocking, magic, Run, Jump, S
 - Harder hits teach you more. Weapon, magic and blood magic summon hits earn experience by the damage they really do, after the target's resistances and only up to the health it had left: early weapons earn a little less than vanilla, late game weapons over twice as much. Blocking earns by the damage you block.
 - Tougher foes teach you more: half as much again per star, and double against bosses.
 - Hitting several creatures with one swing earns more, where vanilla counts the swing once.
+- Dodging in a fight teaches you far more: a dodge with an enemy that has spotted you nearby gives 20 times vanilla's tiny amount, and a perfect dodge 4 times. A dodge you have no stamina for gives nothing.
 - Dying never costs a combat skill level. Instead you lose part of your progress towards the next level, but never below the start of your current level: up to 80% of a level on the Hard death penalty setting, 53% on Normal, 27% on Easy and 8% on Very Easy or Casual. Hardcore still resets every skill.
 
 ## Falling
