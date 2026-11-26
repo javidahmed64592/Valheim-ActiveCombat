@@ -6,6 +6,7 @@ internal static class CombatConfig
 {
     public static ConfigEntry<bool> MovementKeepsActions;
     public static ConfigEntry<float> EquipTimeMultiplier;
+    public static ConfigEntry<float> SheatheTimeMultiplier;
     public static ConfigEntry<float> ReloadTimeMultiplier;
     public static ConfigEntry<float> ReloadStaminaMultiplier;
 
@@ -60,6 +61,9 @@ internal static class CombatConfig
         EquipTimeMultiplier = config.Bind("Actions", "EquipTimeMultiplier", 0f,
             new ConfigDescription("Multiplies how long gear takes to put on or take off. 0 makes it instant, 1 is vanilla. (Synced with server)",
                 new AcceptableValueRange<float>(0f, 2f), Synced()));
+        SheatheTimeMultiplier = config.Bind("Actions", "SheatheTimeMultiplier", 0f,
+            new ConfigDescription("Multiplies how long sheathing or drawing your weapons keeps you walking and unable to attack. 0 lets you run and attack straight away while the animation plays, 1 is vanilla. (Synced with server)",
+                new AcceptableValueRange<float>(0f, 1f), Synced()));
         ReloadTimeMultiplier = config.Bind("Actions", "ReloadTimeMultiplier", 0.5f,
             new ConfigDescription("Multiplies how long crossbows, the grappling hook and Dundr take to load, after the vanilla skill bonus. 1 is vanilla. (Synced with server)",
                 new AcceptableValueRange<float>(0.1f, 2f), Synced()));

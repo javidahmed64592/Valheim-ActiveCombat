@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.1
+
+- **Actions:** sheathing or drawing your weapons no longer keeps you walking and unable to attack for about a second: you can run and attack straight away while the animation plays. `SheatheTimeMultiplier` sets how much of the vanilla wait is kept (0 by default, 1 is vanilla).
+
 ## 0.2.0
 
 - **Movement:** you slide along creatures and other players you run into instead of sticking to them. Vanilla's friction between characters could hold you in place against an enemy slightly in your way, especially on slopes.
