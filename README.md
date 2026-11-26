@@ -12,6 +12,7 @@ Combat stays just as dangerous, but you spend less time waiting on your stamina 
 
 - Running, jumping and dodging no longer cancel equipping or reloading, so you can load a crossbow on the run.
 - Armour and weapons go on and come off instantly.
+- Sheathing or drawing your weapons no longer slows you to a walk: you can run and attack straight away.
 - Crossbows, the grappling hook and Dundr load in half the time, on top of the vanilla skill bonus.
 - Loading a crossbow no longer uses stamina, so stamina keeps regenerating while you load.
 
@@ -68,7 +69,7 @@ Every change above can be tuned or turned off.
 
 ## Compatibility
 
-- Other mods that change equip times, reload times, food, stamina and eitr regeneration, adrenaline, magic costs, fall damage, damage taken, skill experience or the skill death penalty may conflict with this mod.
+- Other mods that change equip or sheathing times, reload times, food, stamina and eitr regeneration, adrenaline, magic costs, fall damage, damage taken, skill experience or the skill death penalty may conflict with this mod.
 - [SkillTracker](https://thunderstore.io/c/valheim/p/Aestelwen/SkillTracker/) shows the experience each hit, block and dodge gives, which makes the skill changes easy to see.
 - This mod has not been tested with a gamepad, only with keyboard and mouse.
 
