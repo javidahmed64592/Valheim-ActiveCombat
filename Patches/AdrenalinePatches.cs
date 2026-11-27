@@ -1,10 +1,10 @@
+using System;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Reflection.Emit;
 
 using ActiveCombat.Adrenaline;
 using ActiveCombat.Core;
-using ActiveCombat.Progression;
 
 using HarmonyLib;
 
@@ -26,6 +26,7 @@ internal static class HitAdrenaline
 
 /// <summary>Melee hits, one gain per character hit (the miss penalty in here passes through unchanged).</summary>
 [HarmonyPatch(typeof(Attack), nameof(Attack.DoMeleeAttack))]
+[Feature(AdrenalineFlow.Feature)]
 internal static class Attack_DoMeleeAttack_Patch
 {
     private static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
@@ -36,6 +37,7 @@ internal static class Attack_DoMeleeAttack_Patch
 
 /// <summary>Area attacks such as the atgeir spin, one gain per attack.</summary>
 [HarmonyPatch(typeof(Attack), nameof(Attack.DoAreaAttack))]
+[Feature(AdrenalineFlow.Feature)]
 internal static class Attack_DoAreaAttack_Patch
 {
     private static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
@@ -46,6 +48,7 @@ internal static class Attack_DoAreaAttack_Patch
 
 /// <summary>Arrows, bolts, spears and staff projectiles hitting a character.</summary>
 [HarmonyPatch(typeof(Projectile), nameof(Projectile.OnHit))]
+[Feature(AdrenalineFlow.Feature)]
 internal static class Projectile_OnHit_Patch
 {
     private static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
@@ -56,6 +59,7 @@ internal static class Projectile_OnHit_Patch
 
 /// <summary>Every hit on a character is sent through here, right before vanilla gives that hit's adrenaline and skill experience.</summary>
 [HarmonyPatch(typeof(Character), nameof(Character.Damage))]
+[Feature(AdrenalineFlow.Feature)]
 internal static class Character_Damage_Patch
 {
     private static void Prefix(Character __instance, HitData hit)
@@ -63,12 +67,12 @@ internal static class Character_Damage_Patch
         if (hit != null)
         {
             HitDamage.OnHit(__instance, hit);
-            SkillXp.OnHit(__instance, hit);
         }
     }
 }
 
 [HarmonyPatch(typeof(Player), nameof(Player.AddAdrenaline))]
+[Feature(AdrenalineFlow.Feature)]
 internal static class Player_AddAdrenaline_Patch
 {
     private static void Prefix(Player __instance, out float __state)
@@ -84,6 +88,7 @@ internal static class Player_AddAdrenaline_Patch
 
 /// <summary>Passes vanilla's adrenaline decay rate through <see cref="AdrenalineFlow.ScaleDecay"/>.</summary>
 [HarmonyPatch(typeof(Player), nameof(Player.UpdateStats), typeof(float))]
+[Feature(AdrenalineFlow.Feature)]
 internal static class Player_UpdateStats_Patch
 {
     private static readonly FieldInfo DegenCurve = AccessTools.Field(typeof(Player), nameof(Player.m_adrenalineDegen));
@@ -113,7 +118,7 @@ internal static class Player_UpdateStats_Patch
 
         if (count == 0)
         {
-            ActiveCombatPlugin.Log.LogWarning($"{nameof(Player_UpdateStats_Patch)}: found nothing to patch. The game may have changed, so slower adrenaline decay is off.");
+            throw new InvalidOperationException(nameof(Player_UpdateStats_Patch) + " found nothing to patch");
         }
     }
 }

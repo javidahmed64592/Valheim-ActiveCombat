@@ -17,6 +17,9 @@ namespace ActiveCombat.Actions;
 /// </summary>
 internal static class SheatheTiming
 {
+    /// <summary>Without it, sheathing and drawing take vanilla's time and slow you to a walk.</summary>
+    public const string Feature = "Sheathe speed";
+
     private const int UpperBodyLayer = 1;
 
     /// <summary>

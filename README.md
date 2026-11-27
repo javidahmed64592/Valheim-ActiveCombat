@@ -66,11 +66,13 @@ These changes apply to the combat skills (weapons, Blocking, magic, Run, Jump, S
 Settings are in `BepInEx/config/javidahmed64592.activecombat.cfg`.
 Settings marked "(Synced with server)" use the server's values when the server has the mod installed.
 Every change above can be tuned or turned off.
+`DisabledFeatures` under `[Debug]` is for testing: it turns parts of the mod off by name. Leave it empty to play normally.
 
 ## Compatibility
 
 - Other mods that change equip or sheathing times, reload times, food, stamina and eitr regeneration, adrenaline, magic costs, fall damage, damage taken, skill experience or the skill death penalty may conflict with this mod.
 - [SkillTracker](https://thunderstore.io/c/valheim/p/Aestelwen/SkillTracker/) shows the experience each hit, block and dodge gives, which makes the skill changes easy to see.
+- If a game update breaks part of the mod, that part turns off on its own and the log says which one; the rest keeps working.
 - This mod has not been tested with a gamepad, only with keyboard and mouse.
 
 ## Uninstalling

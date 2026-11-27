@@ -10,6 +10,7 @@ namespace ActiveCombat.Patches;
 
 /// <summary>Pressing dodge no longer raises the skill; the dodge starting does.</summary>
 [HarmonyPatch(typeof(Player), nameof(Player.Dodge))]
+[Feature(DodgeXp.Feature)]
 internal static class Player_Dodge_XpPatch
 {
     private static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
@@ -22,6 +23,7 @@ internal static class Player_Dodge_XpPatch
 /// A queued dodge that starts sets the queue timer to exactly 0; one that waits or lacks stamina only counts it down.
 /// </summary>
 [HarmonyPatch(typeof(Player), nameof(Player.UpdateDodge))]
+[Feature(DodgeXp.Feature)]
 internal static class Player_UpdateDodge_XpPatch
 {
     private static void Prefix(Player __instance, float dt, out bool __state)
@@ -39,6 +41,7 @@ internal static class Player_UpdateDodge_XpPatch
 }
 
 [HarmonyPatch(typeof(Player), nameof(Player.RPC_HitWhileDodging))]
+[Feature(DodgeXp.Feature)]
 internal static class Player_RPC_HitWhileDodging_XpPatch
 {
     private static readonly MethodInfo Replacement = AccessTools.Method(typeof(DodgeXp), nameof(DodgeXp.RaisePerfect));

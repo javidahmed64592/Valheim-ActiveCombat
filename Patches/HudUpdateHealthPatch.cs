@@ -1,3 +1,4 @@
+using ActiveCombat.Core;
 using ActiveCombat.Food;
 
 using HarmonyLib;
@@ -10,6 +11,7 @@ namespace ActiveCombat.Patches;
 /// take damage). Skipping the wait lets the bar follow your health, still filling smoothly.
 /// </summary>
 [HarmonyPatch(typeof(Hud), nameof(Hud.UpdateHealth))]
+[Feature(FoodRegen.Feature)]
 internal static class Hud_UpdateHealth_Patch
 {
     private static readonly AccessTools.FieldRef<GuiBar, float> DelayTimer =

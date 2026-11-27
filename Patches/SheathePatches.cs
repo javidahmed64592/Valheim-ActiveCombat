@@ -1,4 +1,5 @@
 using ActiveCombat.Actions;
+using ActiveCombat.Core;
 
 using HarmonyLib;
 
@@ -8,6 +9,7 @@ namespace ActiveCombat.Patches;
 
 /// <summary>Sheathing your weapons, e.g. with the hide key.</summary>
 [HarmonyPatch(typeof(Humanoid), nameof(Humanoid.HideHandItems))]
+[Feature(SheatheTiming.Feature)]
 internal static class Humanoid_HideHandItems_Patch
 {
     private static void Postfix(Humanoid __instance, bool animation, bool __result)
@@ -21,6 +23,7 @@ internal static class Humanoid_HideHandItems_Patch
 
 /// <summary>Drawing sheathed weapons. Vanilla only animates when something was sheathed.</summary>
 [HarmonyPatch(typeof(Humanoid), "ShowHandItems")]
+[Feature(SheatheTiming.Feature)]
 internal static class Humanoid_ShowHandItems_Patch
 {
     private static void Prefix(ItemDrop.ItemData ___m_hiddenLeftItem, ItemDrop.ItemData ___m_hiddenRightItem, out bool __state)
@@ -39,6 +42,7 @@ internal static class Humanoid_ShowHandItems_Patch
 
 /// <summary>Minor actions block attacking.</summary>
 [HarmonyPatch(typeof(Player), nameof(Player.InMinorAction))]
+[Feature(SheatheTiming.Feature)]
 internal static class Player_InMinorAction_Patch
 {
     private static void Postfix(Player __instance, Animator ___m_animator, ref bool __result)
@@ -52,6 +56,7 @@ internal static class Player_InMinorAction_Patch
 
 /// <summary>Minor actions keep you walking.</summary>
 [HarmonyPatch(typeof(Player), nameof(Player.InMinorActionSlowdown))]
+[Feature(SheatheTiming.Feature)]
 internal static class Player_InMinorActionSlowdown_Patch
 {
     private static void Postfix(Player __instance, Animator ___m_animator, ref bool __result)

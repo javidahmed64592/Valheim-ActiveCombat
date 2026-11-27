@@ -18,6 +18,11 @@ namespace ActiveCombat.Movement;
 internal static class CharacterContacts
 {
     /// <summary>
+    /// The contact patches and the physics contact event. Without it, you stick to creatures you run into, as in vanilla.
+    /// </summary>
+    public const string Feature = "Sliding past creatures";
+
+    /// <summary>
     /// Instance IDs of every character's rigidbody. Read on physics threads during the simulation step,
     /// and only written on the main thread between steps.
     /// </summary>

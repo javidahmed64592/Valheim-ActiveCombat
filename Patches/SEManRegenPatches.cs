@@ -1,3 +1,4 @@
+using ActiveCombat.Core;
 using ActiveCombat.Regen;
 
 using HarmonyLib;
@@ -9,6 +10,7 @@ namespace ActiveCombat.Patches;
 /// afterwards, so it still counts in full.
 /// </summary>
 [HarmonyPatch(typeof(SEMan), nameof(SEMan.ModifyStaminaRegen))]
+[Feature(SkillRegen.Feature)]
 internal static class SEMan_ModifyStaminaRegen_Patch
 {
     private static void Postfix(SEMan __instance, ref float staminaMultiplier)
@@ -21,6 +23,7 @@ internal static class SEMan_ModifyStaminaRegen_Patch
 }
 
 [HarmonyPatch(typeof(SEMan), nameof(SEMan.ModifyEitrRegen))]
+[Feature(SkillRegen.Feature)]
 internal static class SEMan_ModifyEitrRegen_Patch
 {
     private static void Postfix(SEMan __instance, ref float eitrMultiplier)

@@ -13,6 +13,9 @@ namespace ActiveCombat.Adrenaline;
 /// </summary>
 internal static class AdrenalineFlow
 {
+    /// <summary>Every adrenaline patch. Without it, adrenaline builds, drains and resets as in vanilla.</summary>
+    public const string Feature = "Adrenaline";
+
     /// <summary>Hits closer together than this are one swing hitting several targets, so they share a combo step.</summary>
     private const float SameSwingSeconds = 0.15f;
 

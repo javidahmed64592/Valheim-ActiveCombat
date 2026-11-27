@@ -10,6 +10,9 @@ namespace ActiveCombat.Progression;
 /// </summary>
 internal static class LevelCurve
 {
+    /// <summary>Without it, combat skills need vanilla's experience per level.</summary>
+    public const string Feature = "Level curve";
+
     public static bool TryGetRequirement(Skills.Skill skill, out float requirement)
     {
         requirement = 0f;

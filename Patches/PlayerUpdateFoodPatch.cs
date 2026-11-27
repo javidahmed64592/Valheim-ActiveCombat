@@ -1,3 +1,4 @@
+using ActiveCombat.Core;
 using ActiveCombat.Food;
 
 using HarmonyLib;
@@ -9,6 +10,7 @@ namespace ActiveCombat.Patches;
 /// restored a little every frame instead; otherwise stamina and eitr arrive on the same tick vanilla heals on.
 /// </summary>
 [HarmonyPatch(typeof(Player), nameof(Player.UpdateFood))]
+[Feature(FoodRegen.Feature)]
 internal static class Player_UpdateFood_Patch
 {
     private static void Prefix(Player __instance, float dt, bool forceUpdate, out bool __state)

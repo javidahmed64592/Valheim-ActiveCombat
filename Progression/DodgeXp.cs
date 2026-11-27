@@ -12,6 +12,9 @@ namespace ActiveCombat.Progression;
 /// </summary>
 internal static class DodgeXp
 {
+    /// <summary>Without it, dodging earns vanilla's experience.</summary>
+    public const string Feature = "Dodge experience";
+
     private const float VanillaDodgeRaise = 0.1f;
     private const float CombatRange = 15f;
 

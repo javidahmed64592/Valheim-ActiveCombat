@@ -28,9 +28,13 @@ public class ActiveCombatPlugin : BaseUnityPlugin
         CombatConfig.Bind(Config);
         Translations.Load();
 
+        // Every part of the mod can turn off on its own, so there is no core for PatchAll to fail on.
         _harmony = new Harmony(PluginGUID);
-        _harmony.PatchAll();
-        CharacterContacts.Subscribe();
+        _ = SafePatcher.PatchAll(_harmony, Config, Logger);
+        if (SafePatcher.IsOn(CharacterContacts.Feature))
+        {
+            CharacterContacts.Subscribe();
+        }
     }
 
     private void OnDestroy()

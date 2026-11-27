@@ -14,6 +14,9 @@ namespace ActiveCombat.Progression;
 /// </summary>
 internal static class DeathPenalty
 {
+    /// <summary>Without it, dying lowers combat skills as in vanilla.</summary>
+    public const string Feature = "Death penalty";
+
     /// <summary>The world's highest scaled death penalty setting (Hard, "SkillReductionRate 150").</summary>
     private const float HardestRate = 1.5f;
 
