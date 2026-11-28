@@ -11,6 +11,8 @@ internal static class CombatConfig
     public static ConfigEntry<float> ReloadStaminaMultiplier;
 
     public static ConfigEntry<bool> SlidePastCharacters;
+    public static ConfigEntry<bool> AttackOutOfRoll;
+    public static ConfigEntry<float> RollAttackDelay;
 
     public static ConfigEntry<float> StaminaRegenDelayMultiplier;
     public static ConfigEntry<float> AgilityRegenBonus;
@@ -74,6 +76,13 @@ internal static class CombatConfig
         SlidePastCharacters = config.Bind("Movement", "SlidePastCharacters", true,
             new ConfigDescription("You slide along creatures and other players you run into instead of sticking to them, so one slightly in your way can no longer hold you in place, even on a slope. They still block you head-on. (Synced with server)",
                 null, Synced()));
+
+        AttackOutOfRoll = config.Bind("Dodge", "AttackOutOfRoll", true,
+            new ConfigDescription("You can attack shortly after a roll's invulnerability ends (about 0.4 seconds in), cutting its recovery short; see Dodge.AttackDelay. Vanilla makes you wait for the whole roll to finish, about 0.9 seconds. (Synced with server)",
+                null, Synced()));
+        RollAttackDelay = config.Bind("Dodge", "AttackDelay", 0.2f,
+            new ConfigDescription("How long after a roll's invulnerability ends you must wait to attack, in seconds, at Dodge skill 0. It shrinks with your skill and is gone at 100, so you can attack the moment the invulnerability ends. (Synced with server)",
+                new AcceptableValueRange<float>(0f, 0.5f), Synced()));
 
         StaminaRegenDelayMultiplier = config.Bind("Stamina", "RegenDelayMultiplier", 0.5f,
             new ConfigDescription("Multiplies how long stamina waits after you use it before it starts regenerating. Vanilla waits 1 second; 0 starts straight away. (Synced with server)",

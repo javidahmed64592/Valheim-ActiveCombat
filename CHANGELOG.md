@@ -4,6 +4,8 @@
 
 - If a game update breaks part of the mod, only that part turns off and the rest keeps working: each change listed in the README (such as instant gear changes, food regen, adrenaline, the mana shield or the level curve) turns off on its own and goes back to vanilla. The log says which part is off, in one line.
 - New `DisabledFeatures` setting under `[Debug]`, for testing: turns parts of the mod off by name.
+- You can attack out of a roll instead of waiting for the whole roll to finish (about 0.9 seconds). The roll is still invulnerable for its first 0.4 seconds, then you can attack after a wait that shrinks with Dodge skill: 0.2 seconds at skill 0, none at 100. Settings: `Dodge.AttackOutOfRoll` and `Dodge.AttackDelay`.
+- It can turn off on its own after a game update ("Attack out of a roll").
 - Updated Jotunn to 2.30.3.
 
 ## 0.2.1
