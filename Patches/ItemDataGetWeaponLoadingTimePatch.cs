@@ -1,4 +1,5 @@
 using ActiveCombat.Actions;
+using ActiveCombat.Core;
 
 using HarmonyLib;
 
@@ -6,8 +7,12 @@ namespace ActiveCombat.Patches;
 
 /// <summary>Scales reload time for crossbows, the grappling hook and Dundr, after vanilla's skill bonus.</summary>
 [HarmonyPatch(typeof(ItemDrop.ItemData), nameof(ItemDrop.ItemData.GetWeaponLoadingTime))]
+[Feature(Feature)]
 internal static class ItemData_GetWeaponLoadingTime_Patch
 {
+    /// <summary>Without it, crossbows, the grappling hook and Dundr load in vanilla's time.</summary>
+    public const string Feature = "Faster loading";
+
     private static void Postfix(ItemDrop.ItemData __instance, ref float __result)
     {
         if (__instance.m_shared.m_attack.m_requiresReload)

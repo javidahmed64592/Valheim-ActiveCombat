@@ -21,6 +21,7 @@ internal static class HitXp
 
 /// <summary>Melee swings: one raise per swing, after every target is hit.</summary>
 [HarmonyPatch(typeof(Attack), nameof(Attack.DoMeleeAttack))]
+[Feature(SkillXp.Feature)]
 internal static class Attack_DoMeleeAttack_XpPatch
 {
     private static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
@@ -31,6 +32,7 @@ internal static class Attack_DoMeleeAttack_XpPatch
 
 /// <summary>Area attacks: one raise per attack, after every target is hit.</summary>
 [HarmonyPatch(typeof(Attack), nameof(Attack.DoAreaAttack))]
+[Feature(SkillXp.Feature)]
 internal static class Attack_DoAreaAttack_XpPatch
 {
     private static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
@@ -41,6 +43,7 @@ internal static class Attack_DoAreaAttack_XpPatch
 
 /// <summary>Arrows, bolts, thrown spears and staff projectiles hitting a character.</summary>
 [HarmonyPatch(typeof(Projectile), nameof(Projectile.OnHit))]
+[Feature(SkillXp.Feature)]
 internal static class Projectile_OnHit_XpPatch
 {
     private static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
@@ -51,6 +54,7 @@ internal static class Projectile_OnHit_XpPatch
 
 /// <summary>Explosions such as the fireball: vanilla raises once, for the first target hit.</summary>
 [HarmonyPatch(typeof(Aoe), nameof(Aoe.OnHit))]
+[Feature(SkillXp.Feature)]
 internal static class Aoe_OnHit_XpPatch
 {
     private static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
@@ -60,6 +64,7 @@ internal static class Aoe_OnHit_XpPatch
 }
 
 [HarmonyPatch(typeof(Humanoid), nameof(Humanoid.BlockAttack))]
+[Feature(SkillXp.Feature)]
 internal static class Humanoid_BlockAttack_XpPatch
 {
     private static readonly MethodInfo Replacement = AccessTools.Method(typeof(SkillXp), nameof(SkillXp.RaiseBlock));
@@ -77,5 +82,22 @@ internal static class Humanoid_BlockAttack_XpPatch
     private static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
     {
         return Transpile.ReplaceCall(instructions, nameof(Character.RaiseSkill), Replacement, nameof(Humanoid_BlockAttack_XpPatch));
+    }
+}
+
+/// <summary>
+/// Every hit on a character is sent through here, right before vanilla gives that hit's skill experience. Kept apart
+/// from <see cref="Character_Damage_Patch"/>, which does the same for adrenaline, so either can turn off alone.
+/// </summary>
+[HarmonyPatch(typeof(Character), nameof(Character.Damage))]
+[Feature(SkillXp.Feature)]
+internal static class Character_Damage_XpPatch
+{
+    private static void Prefix(Character __instance, HitData hit)
+    {
+        if (hit != null)
+        {
+            SkillXp.OnHit(__instance, hit);
+        }
     }
 }

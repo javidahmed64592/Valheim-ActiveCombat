@@ -14,6 +14,9 @@ namespace ActiveCombat.Magic;
 /// </summary>
 internal static class BloodMagicCost
 {
+    /// <summary>Without it, blood magic staffs cost vanilla's health.</summary>
+    public const string Feature = "Blood magic cost";
+
     private static readonly Regex HealthUse = new(
         @"\n\$item_healthuse: <color=orange>(?<value>[0-9]+(?:\.[0-9]+)?)(?<percent>%?)</color>",
         RegexOptions.Compiled);

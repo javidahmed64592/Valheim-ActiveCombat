@@ -17,6 +17,12 @@ namespace ActiveCombat.Progression;
 /// </summary>
 internal static class SkillXp
 {
+    /// <summary>
+    /// Every hit, block and multi-target experience patch. Without it, weapons, blocking and magic earn vanilla's
+    /// experience.
+    /// </summary>
+    public const string Feature = "Damage-based experience";
+
     private const float MinDamageFactor = 0.5f;
     private const float MaxDamageFactor = 3f;
 

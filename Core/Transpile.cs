@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Reflection;
 
@@ -76,7 +77,7 @@ internal static class Transpile
     {
         if (count == 0)
         {
-            ActiveCombatPlugin.Log.LogWarning($"{patchName}: found nothing to patch. The game may have changed, so this feature is off.");
+            throw new InvalidOperationException(patchName + " found nothing to patch");
         }
     }
 }

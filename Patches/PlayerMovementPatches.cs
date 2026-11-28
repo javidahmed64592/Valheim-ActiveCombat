@@ -11,6 +11,11 @@ namespace ActiveCombat.Patches;
 /// <summary>Swaps the <c>ClearActionQueue()</c> call in sprinting, jumping and dodging for one that respects the setting.</summary>
 internal static class MovementClear
 {
+    /// <summary>
+    /// Running, jumping and dodging don't cancel equipping or reloading. Without it, they do, as in vanilla.
+    /// </summary>
+    public const string Feature = "Movement doesn't cancel actions";
+
     private static readonly MethodInfo Replacement = AccessTools.Method(
         typeof(ActionTiming), nameof(ActionTiming.ClearUnlessMovementKeepsActions));
 
@@ -21,6 +26,7 @@ internal static class MovementClear
 }
 
 [HarmonyPatch(typeof(Player), nameof(Player.CheckRun))]
+[Feature(MovementClear.Feature)]
 internal static class Player_CheckRun_Patch
 {
     private static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
@@ -30,6 +36,7 @@ internal static class Player_CheckRun_Patch
 }
 
 [HarmonyPatch(typeof(Player), nameof(Player.OnJump))]
+[Feature(MovementClear.Feature)]
 internal static class Player_OnJump_Patch
 {
     private static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
@@ -39,6 +46,7 @@ internal static class Player_OnJump_Patch
 }
 
 [HarmonyPatch(typeof(Player), nameof(Player.UpdateDodge))]
+[Feature(MovementClear.Feature)]
 internal static class Player_UpdateDodge_Patch
 {
     private static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)

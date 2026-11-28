@@ -12,6 +12,12 @@ namespace ActiveCombat.Food;
 /// </summary>
 internal static class FoodRegen
 {
+    /// <summary>
+    /// The food tick and the health bar. Without it, food heals every 10 seconds and restores no stamina or eitr, as in
+    /// vanilla.
+    /// </summary>
+    public const string Feature = "Food regen";
+
     /// <summary>Seconds between vanilla's food regen ticks.</summary>
     public const float TickSeconds = 10f;
 

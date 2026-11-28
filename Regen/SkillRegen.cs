@@ -11,6 +11,9 @@ namespace ActiveCombat.Regen;
 /// </summary>
 internal static class SkillRegen
 {
+    /// <summary>Without it, stamina and eitr regenerate at vanilla's rate whatever your skills.</summary>
+    public const string Feature = "Skill regen bonus";
+
     private static readonly Skills.SkillType[] AgilitySkills =
     [
         Skills.SkillType.Run,
