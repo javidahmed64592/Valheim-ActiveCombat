@@ -4,9 +4,8 @@
 
 - If a game update breaks part of the mod, only that part turns off and the rest keeps working: each change listed in the README (such as instant gear changes, food regen, adrenaline, the mana shield or the level curve) turns off on its own and goes back to vanilla. The log says which part is off, in one line.
 - New `DisabledFeatures` setting under `[Debug]`, for testing: turns parts of the mod off by name.
-- You can attack as soon as a roll's invulnerability ends (about 0.4 seconds in), instead of waiting for the whole roll to finish. Setting: `Dodge.AttackOutOfRoll`.
-- Dodge skill adds up to 0.2 seconds of invulnerability after a roll's own, at skill 100, and it carries on into an attack started out of the roll. Setting: `Dodge.SkillIframeBonus`.
-- Both can turn off on their own after a game update ("Attack out of a roll", "Dodge skill lengthens i-frames").
+- You can attack out of a roll instead of waiting for the whole roll to finish (about 0.9 seconds). The roll is still invulnerable for its first 0.4 seconds, then you can attack after a wait that shrinks with Dodge skill: 0.2 seconds at skill 0, none at 100. Settings: `Dodge.AttackOutOfRoll` and `Dodge.AttackDelay`.
+- It can turn off on its own after a game update ("Attack out of a roll").
 - Updated Jotunn to 2.30.3.
 
 ## 0.2.1

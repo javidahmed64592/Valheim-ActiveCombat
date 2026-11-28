@@ -12,7 +12,7 @@ internal static class CombatConfig
 
     public static ConfigEntry<bool> SlidePastCharacters;
     public static ConfigEntry<bool> AttackOutOfRoll;
-    public static ConfigEntry<float> RollIframeBonus;
+    public static ConfigEntry<float> RollAttackDelay;
 
     public static ConfigEntry<float> StaminaRegenDelayMultiplier;
     public static ConfigEntry<float> AgilityRegenBonus;
@@ -78,10 +78,10 @@ internal static class CombatConfig
                 null, Synced()));
 
         AttackOutOfRoll = config.Bind("Dodge", "AttackOutOfRoll", true,
-            new ConfigDescription("You can attack as soon as a roll's invulnerability ends, cutting its recovery short. Vanilla makes you wait for the whole roll to finish, about half a second longer. (Synced with server)",
+            new ConfigDescription("You can attack shortly after a roll's invulnerability ends (about 0.4 seconds in), cutting its recovery short; see Dodge.AttackDelay. Vanilla makes you wait for the whole roll to finish, about 0.9 seconds. (Synced with server)",
                 null, Synced()));
-        RollIframeBonus = config.Bind("Dodge", "SkillIframeBonus", 0.2f,
-            new ConfigDescription("Extra invulnerability after a roll's own, in seconds, earned with Dodge skill: it grows with your skill and reaches this value at 100. It carries on into an attack started out of the roll, so a skilled dodger can strike back safely. Vanilla's roll is invulnerable for about 0.4 seconds; 0 turns this off. (Synced with server)",
+        RollAttackDelay = config.Bind("Dodge", "AttackDelay", 0.2f,
+            new ConfigDescription("How long after a roll's invulnerability ends you must wait to attack, in seconds, at Dodge skill 0. It shrinks with your skill and is gone at 100, so you can attack the moment the invulnerability ends. (Synced with server)",
                 new AcceptableValueRange<float>(0f, 0.5f), Synced()));
 
         StaminaRegenDelayMultiplier = config.Bind("Stamina", "RegenDelayMultiplier", 0.5f,

@@ -11,8 +11,7 @@ Combat stays just as dangerous, but you spend less time waiting on your stamina 
 ## Actions and Weapons
 
 - Running, jumping and dodging no longer cancel equipping or reloading, so you can load a crossbow on the run.
-- You can attack as soon as a roll's invulnerability ends, without waiting for the whole roll to finish.
-- Dodge skill adds invulnerability after a roll, up to 0.2 seconds at skill 100, which carries on into an attack out of the roll.
+- You can attack out of a roll without waiting for it to finish. At Dodge skill 0 you can attack 0.2 seconds after its invulnerability ends; the wait shrinks with your skill, and at 100 you can attack the moment the invulnerability ends.
 - Armour and weapons go on and come off instantly.
 - Sheathing or drawing your weapons no longer slows you to a walk: you can run and attack straight away.
 - Crossbows, the grappling hook and Dundr load in half the time, on top of the vanilla skill bonus.
